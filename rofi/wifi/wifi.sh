@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+notify-send -t 3000 -i info " 󰤨  Checking For Wifi"
+
 # Check if wifi is on
 check_wifi_on=$( nmcli --field WIFI g | sed 1d | sed 's/ //g' )
 
@@ -81,3 +83,5 @@ elif [[ $choice != "" ]] ; then
 	take_password
 	nmcli device wifi connect "$choice" password "$password"
 fi
+
+

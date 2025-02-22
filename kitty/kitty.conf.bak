@@ -1,0 +1,30 @@
+# Catppuccin-Mocha
+include current-theme.conf
+window_padding_width 12
+
+font_size 10.0
+enable_ligature true
+
+confirm_os_window_close 0
+# font_family  family="JetBrains Mono Nerd Font"
+# bold_font        auto
+# italic_font      auto
+# bold_italic_font auto
+# disable_ligatures always
+
+map ctrl+shift+c copy_to_clipboard
+map ctrl+shift+v paste_from_clipboard
+
+
+# BEGIN_KITTY_THEME
+# Catppuccin-Mocha
+# include current-theme.conf
+# END_KITTY_THEME
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="JetBrainsMono Nerd Font Mono"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS

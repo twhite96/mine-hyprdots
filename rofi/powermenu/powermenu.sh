@@ -9,11 +9,11 @@ uptime="`uptime -p | sed -e 's/up //g' | sed -e 's/hour/hr/g' | sed -e 's/minute
 
 # Options
 hibernate=''
-shutdown=''
-reboot=''
-lock=''
+shutdown=''
+reboot='⟳'
+lock=''
 suspend=''
-logout=''
+logout=''
 yes=''
 no=''
 

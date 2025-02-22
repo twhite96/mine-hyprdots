@@ -1,3 +1,8 @@
+![alt text](Assests/terminal.png)
+![alt text](Assests/go.png)
+![alt text](Assests/nvim.png)
+![alt text](Assests/obsidian.png)
+
 ## File System
 
 - **File System**: btrfs
@@ -56,13 +61,15 @@
 - **Zip Management**: unzip
 - **Clipboard Management**: cliphist, wl-clipboard
 
-
 ### TUI Setup
 
 - **Git Management**: gitui, lazygit
 - **Code Editors**: Neovim, Nano, Vim
 - **Task Manager**: btop
 - **File Manager**: yazi
+- **Kubernetes**: k9s
+- **Docker**: lazydocker
+
 ---
 
 ### CLI Alternatives
@@ -84,40 +91,3 @@
 - **Media Player Control**: playerctl
 
 ---
-
-## To-Do List
-
-### System Monitoring & Performance
-
-- [ ] Set up `cpupower` for CPU management.
-
-### Security & Backup
-
-- [ ] Install `ufw` or `firewalld` for managing firewall.
-- [ ] Set up `timeshift` or `restic` for automated backups.
-
-### Shell Utilities
-
-- [ ] Add `httpie` for API requests.
-- [ ] Use `ripgrep` (`rg`) for faster file searches.
-
-### Productivity Tools
-
-- [ ] Install `rsync` or `rclone` for efficient file transfer.
-- [ ] Use `borg` or `rsnapshot` for file backups.
-
-### Clipboard & File Utilities
-
-- [ ] Install `zathura` for minimalistic PDF viewing.
-
-### Developer Tools
-
-- [ ] Install `prettier`, `eslint`, or `shellcheck` for linting and formatting.
-- [ ] Set up `podman` or `docker` for containerized environments.
-- [ ] Add `cmake` or `meson` for compiling and building software from source.
-
-### Miscellaneous Tools
-
-- [ ] Install `pass` for password management in the terminal.
-- [ ] Try `calcurse` for task and calendar management.
-- [ ] Install `tlp` for laptop power management.
