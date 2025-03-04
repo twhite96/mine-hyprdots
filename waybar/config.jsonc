@@ -1,11 +1,14 @@
 {
-r "layer": "top",
-  "margin-left": 8,
-  "margin-right": 8,
+  "layer": "top",
+  // "position": "bottom",
+  "margin-left": 3,
+  "margin-right": 3,
   "margin-top": 2,
-  "margin-bottom": 2,
+  "margin-bottom": 0,
   "modules-left": ["hyprland/workspaces", "cpu", "memory", "network#speed"],
-  "modules-center": ["clock", "custom/weather"],
+  "modules-center": [
+    "clock"
+  ],
   "modules-right": [
     "temperature#gpu",
     "custom/transparency",
@@ -13,7 +16,7 @@ r "layer": "top",
     "pulseaudio",
     "backlight",
     "network",
-    "bluetooth",
+    // "bluetooth",
     "battery"
   ],
   "temperature#gpu": {
@@ -64,7 +67,7 @@ r "layer": "top",
   "custom/transparency": {
     "format": " ",
     "tooltip": false,
-    "on-click": "~/.local/bin/toggleTrans.sh",
+    "on-click": "~/.config/waybar/scripts/toggle-trans.sh",
     "format-alt": " "
   },
   "cpu": {
@@ -83,6 +86,11 @@ r "layer": "top",
     "warp-on-scroll": true,
     "enable-bar-scroll": true,
     "disable-scroll-wraparound": false,
+    "format": " {icon} ",
+    "format-icons": {
+      "active": "●",
+      "default": "○"
+    },
     "persistent-workspaces": {
       "*": 3
     },
