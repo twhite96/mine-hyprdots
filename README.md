@@ -1,11 +1,13 @@
-## Don't forget to star
+## ⭐ Don't Forget to Star!
 
-![terminal](Assests/terminal.png)
-![golang](Assests/go.png)
-![powermenu](Assests/powermenu-rofi.png)
-![nvim](Assests/nvim.png)
-![launcher](Assests/launcher.png)
-![obsidian](Assests/obsidian.png)
+[![GitHub stars](https://img.shields.io/github/stars/yourname/dotfiles?style=for-the-badge)](https://github.com/ad1822/hyprdots)
+
+![terminal](Assets/terminal.png)
+![golang](Assets/go.png)
+![powermenu](Assets/powermenu-rofi.png)
+![nvim](Assets/nvim.png)
+![launcher](Assets/launcher.png)
+![obsidian](Assets/obsidian.png)
 
 ## Wallpaper
 
