@@ -1,7 +1,15 @@
-![alt text](Assests/terminal.png)
-![alt text](Assests/go.png)
-![alt text](Assests/nvim.png)
-![alt text](Assests/obsidian.png)
+## Don't forget to star
+
+![terminal](Assests/terminal.png)
+![golang](Assests/go.png)
+![powermenu](Assests/powermenu-rofi.png)
+![nvim](Assests/nvim.png)
+![launcher](Assests/launcher.png)
+![obsidian](Assests/obsidian.png)
+
+## Wallpaper
+
+[Wallpaper](https://drive.google.com/drive/folders/1Eog40yvrTshjDLVIETVncBKcDsvPLMIX?usp=sharing)
 
 ## File System
 
@@ -36,12 +44,11 @@
 - **Status Bar**: Waybar
 - **Notification Manager**: Dunst
 - **Browser**: Firefox
-- **Code Editor**: VSCodium
 - **Image Viewer**: feh
 - **Video Player**: VLC
 - **Color Picker**: hyprpicker
 - **Wallpaper Utility**: hyprpaper
-- **Screenshot Utility**: hyprshot
+- **Screenshot Utility**: grim & slurp
 - **File Manager**: Thunar
 - **App Launcher**: Rofi
 - **Wi-Fi & Bluetooth Management**: Rofi
