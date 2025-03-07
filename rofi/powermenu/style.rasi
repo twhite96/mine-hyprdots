@@ -1,130 +1,112 @@
 /*****----- Configuration -----*****/
 configuration {
-    show-icons:                 false;
+    show-icons: false;
 }
 
 /*****----- Global Properties -----*****/
 * {
-    font:                        "JetBrainsMono Nerd Font Mono Bold 12";
-    background:                  #11111b;
-    background-alt:              #f2cdcd;
-    foreground:                  #FFFFFF;
-    selected:                    #cba6f7;
-    active:                      #716251;
-    urgent:                      #934A1C;
+    font: "JetBrainsMono Nerd Font Mono 12";
+    background: #11111b;
+    foreground: #cdd6f4;
+    selected: #cba6f7;
+    active: #f5e0dc;
+    urgent: #f38ba8;
 }
-
-/*
-USE_BUTTONS=YES
-*/
 
 /*****----- Main Window -----*****/
 window {
-    transparency:                "real";
-    location:                    center;
-    anchor:                      center;
-    fullscreen:                  false;
-    width:                       600px;
-    x-offset:                    0px;
-    y-offset:                    0px;
+    transparency: "real";
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    width: 300px;
+    x-offset: 0px;
+    y-offset: 0px;
 
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               8px;
-    border-color:                @selected;
-    cursor:                      "default";
-    background-color:            @background;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: @background;
 }
 
 /*****----- Main Box -----*****/
 mainbox {
-    enabled:                     true;
-    spacing:                     0px;
-    margin:                      0px;
-    padding:                     0px;
-    border:                      0px solid;
-    border-radius:               0px;
-    border-color:                @selected;
-    background-color:            transparent;
-    children:                    [ "inputbar", "message", "listview" ];
+    enabled: true;
+    spacing: 2px;
+    margin: 4px;
+    padding: 2px;
+    background-color: @background;
+    children: [ "listview" ];
 }
+
+
 
 /*****----- Inputbar -----*****/
 inputbar {
-    enabled:                     true;
-    spacing:                     0px;
-    padding:                     102px 32px 80px 32px;
-    border-radius:		 0%;
-    background-color:            transparent;
-    background-image:            url("~/Downloads/wallpaper/Anime.png",width);
-    children:                    ["dummy", "prompt"];
+    enabled: true;
+    background-color: @background;
+    text-color: @foreground;
+    children: ["dummy", "prompt"];
 }
 
 prompt {
-    enabled:                     true;
-    padding:                     8px;
-    border-radius:               8px;
-    background-color:            #a6e3a1;
-    text-color:                  #313244;
-}
-
-dummy {
-    background-color:            transparent;
+    enabled: true;
+    padding: 4px;
+    border-radius: 4px;
+    background-color: #a6e3a1;
+    text-color: #313244;
 }
 
 /*****----- Listview -----*****/
 listview {
-    enabled:                     true;
-    columns:                     6;
-    lines:                       1;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    layout:                      vertical;
-    reverse:                     false;
-    fixed-height:                true;
-    fixed-columns:               true;
-    
-    spacing:                     16px;
-    padding:                     32px;
-    margin:                      0px;
-    background-color:            transparent;
-    cursor:                      "default";
+    enabled: true;
+    columns: 1;
+    lines: 6;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    reverse: false;
+    fixed-height: true;
+    fixed-columns: true;
+
+    spacing: 4px;
+    padding: 4px;
+    background-color: @background;
 }
 
-/*****----- Elements -----*****/
+/*****----- Elements (Text Instead of Icons) -----*****/
 element {
-    enabled:                     true;
-    padding:                     17px;
-    border-radius:               16px;
-    background-color:            #585b70;
-    text-color:                  #eff1f5;
-    cursor:                      pointer;
-}
-element-text {
-    font:                        "Font Awesome 5 Free Bold 24";
-    background-color:            transparent;
-    text-color:                  inherit;
-    cursor:                      inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.5;
-}
-element selected.normal {
-    background-color:            #cba6f7;
-    text-color:                  #313244;
+    enabled: true;
+    padding: 10px;
+    border-radius: 2px;
+    background-color: #313244;
+    text-color: #cdd6f4;
+    cursor: pointer;
 }
 
-/*****----- Message -----*****/
-message {
-    enabled:                     true;
-    margin:      		 20px 150px 0px 150px;
-    padding:                     10px 20px;
-    border-radius: 		 100%;
-    background-color: 		 #f5c2e7;
+element selected.normal {
+    background-color: #cba6f7;
+    text-color: #1e1e2e;
 }
+
+element-text {
+    font: "JetBrainsMono Nerd Font Mono 9";
+    background-color: transparent;
+    text-color: inherit;
+    cursor: inherit;
+}
+
+/*****----- Message Box -----*****/
+message {
+    enabled: true;
+    margin: 2px;
+    padding: 4px;
+    border-radius: 2px;
+    background-color: #f5e0dc;
+    text-color: #1e1e2e;
+}
+
 textbox {
-    background-color:            transparent;
-    text-color:                  #313244;
-    vertical-align:              0.5;
-    horizontal-align:            0.5;
+    background-color: transparent;
+    text-color: @foreground;
 }

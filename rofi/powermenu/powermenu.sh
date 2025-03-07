@@ -7,15 +7,24 @@ theme='style'
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g' | sed -e 's/hour/hr/g' | sed -e 's/minute/min/g'`"
 
+# # Options
+# hibernate=' hibernate'
+# shutdown=' Shutdown'
+# reboot='⟳ Reboot'
+# lock=' Lock'
+# suspend=' Suspend'
+# logout=' Logout'
+# yes=' Yes'
+# no=' No'
 # Options
-hibernate=''
-shutdown=''
-reboot='⟳'
-lock=''
-suspend=''
-logout=''
-yes=''
-no=''
+hibernate='Hibernate'
+shutdown='Shutdown'
+reboot='Reboot'
+lock='Lock'
+suspend='Suspend'
+logout='Logout'
+yes='yes'
+no='no'
 
 # Rofi CMD
 rofi_cmd() {
