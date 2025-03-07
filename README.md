@@ -1,7 +1,3 @@
-## ⭐ Don't Forget to Star!
-
-[![GitHub stars](https://img.shields.io/github/stars/yourname/dotfiles?style=for-the-badge)](https://github.com/ad1822/hyprdots)
-
 ![terminal](Assets/terminal.png)
 ![golang](Assets/go.png)
 ![powermenu](Assets/powermenu-rofi.png)
