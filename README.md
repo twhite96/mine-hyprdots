@@ -1,4 +1,7 @@
-![terminal](Assets/terminal.png)
+<!-- ![terminal](Assets/terminal.png) -->
+
+![home](Assets/home.png)
+![btop](Assets/btop.png)
 ![golang](Assets/go.png)
 ![powermenu](Assets/powermenu-rofi.png)
 ![nvim](Assets/nvim.png)
