@@ -4,9 +4,12 @@
 ![btop](Assets/btop.png)
 ![golang](Assets/go.png)
 ![powermenu](Assets/powermenu.png)
-![nvim](Assets/nvim.png)
+
+<!-- ![nvim](Assets/nvim.png) -->
+
 ![launcher](Assets/launcher.png)
-![obsidian](Assets/obsidian.png)
+
+<!-- ![obsidian](Assets/obsidian.png) -->
 
 ## Wallpaper
 
