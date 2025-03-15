@@ -13,13 +13,13 @@
   background-color: transparent;
 }
 
-#custom-weather {
-  margin-left: 2px;
-  margin-right: 2px;
-  padding: 0px 8px;
-  background: @raisin-black;
-  color: @beige;
-  border-radius: 6px;
+#custom-cava {
+  color: #8fbc8f;
+  border-left: 0px;
+  border-right: 0px;
+  padding-bottom: 6px;
+  font-family: 'bargraph';
+  font-size: 22px;
 }
 
 #cpu {
@@ -61,10 +61,6 @@ menu,
   padding: 7px 8px;
   margin: 0;
   border-radius: 6px;
-}
-
-tooltip {
-  border: 1px solid @beige;
 }
 
 .modules-right,
@@ -140,7 +136,7 @@ tooltip {
   font-size: 20px;
   font-family: 'Font Awesome 5 Free';
   padding: 0px 8px;
-  margin-right: 2px;
+  margin-right: 1px;
   color: #f38ba8;
   background: @raisin-black;
   border-radius: 0 6px 6px 0;
@@ -149,7 +145,7 @@ tooltip {
 #pulseaudio,
 #backlight {
   padding: 0 8px;
-  margin: 0 2px;
+  margin: 0 1px;
   color: @beige;
   border-radius: 6px 6px;
 }
@@ -158,6 +154,7 @@ tooltip {
 #network {
   color: #cba6f7;
   border-radius: 6px;
+  margin: 0 1px;
 }
 
 #network.speed {
@@ -187,38 +184,39 @@ tooltip {
   color: @mint;
   min-width: 30px;
   padding-left: 5px;
-  margin: 0 2px;
+  margin-left: 1px;
+  /* margin: 0 1px; */
   padding-right: 5px;
   border-radius: 6px;
 }
 
 #battery.charging {
-  color: #eff1f5; /* Text */
-  background: #40a02b; /* Green */
+  color: #33ae18; /* Text */
+  background: @raisin-black;
   border-radius: 6px;
 }
 
 #battery.good:not(.charging) {
-  color: #f9e2af; /* Peach */
-  /* background: #1e1e2e; Base */
+  color: #f8d589;
+  background: @raisin-black;
   border-radius: 6px;
 }
 
 #battery.warning:not(.charging) {
-  color: #eff1f5; /* Text */
-  background: #df8e1d; /* Yellow */
+  color: #e0a858; /* Text */
+  background: @raisin-black;
   border-radius: 6px;
 }
 
 #battery.low:not(.charging) {
-  color: #eff1f5; /* Text */
-  background: #d20f39; /* Red */
+  color: #d20f39; /* Text */
+  background: @raisin-black;
   border-radius: 6px;
 }
 
 #battery.critical:not(.charging) {
-  color: #eff1f5; /* Text */
-  background: #d20f39; /* Red */
+  color: #d20f39; /* Text */
+  background: @raisin-black;
   animation-name: blink;
   animation-duration: 0.75s;
   animation-timing-function: linear;

@@ -3,7 +3,7 @@
 ![home](Assets/home.png)
 ![btop](Assets/btop.png)
 ![golang](Assets/go.png)
-![powermenu](Assets/powermenu-rofi.png)
+![powermenu](Assets/powermenu.png)
 ![nvim](Assets/nvim.png)
 ![launcher](Assets/launcher.png)
 ![obsidian](Assets/obsidian.png)
