@@ -81,20 +81,50 @@ alias vim='nvim'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
-alias isc='nvim $(fzf -m --preview="bat --color=always {}")'
-alias ls='eza -l --header  --tree --level=1  --all --sort=Name'
+alias jump='nvim $(fzf -m --preview="bat --color=always {}")'
+alias ls='eza -l -i --header  --tree --level=1  --all --sort=Name'
 alias search='eval "~/.local/bin/search.sh"'
 alias code='code .'
 alias tnew='tmux new -s '
 alias tatt='tmux a -t'
+alias ..='cd ..'
+alias ....='cd ../..'
+alias ~='cd ~'
+alias seek='pacseek'
+alias y='yazi'
+
+gh_open() {
+  REPO_URL=$(git config --get remote.origin.url | sed 's/git@github.com:/https:\/\/github.com\//;s/.git$//')
+  [ -n "$REPO_URL" ] && xdg-open "$REPO_URL"
+}
+
+
+extract() {
+  if [ -f "$1" ]; then
+    case "$1" in
+      *.tar.gz)  tar -xzf "$1"      ;;
+      *.tar.xz)  tar -xf "$1"       ;;
+      *.tar.bz2) tar -xjf "$1"      ;;
+      *.gz)      gunzip "$1"        ;;
+      *.bz2)     bunzip2 "$1"       ;;
+      *.zip)     unzip "$1"         ;;
+      *.Z)       uncompress "$1"    ;;
+      *.7z)      7z x "$1"          ;;
+      *)         echo "'$1' cannot be extracted" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+killp() {
+  ps aux | fzf | awk '{print $2}' | xargs kill -9
+}
 
 take() {
     mkdir -p "$1" && cd "$1"
 }
-
-
 #fastfetch
-
 #wl-paste --watch cliphist store &
 eval $(thefuck --alias)
 eval "$(atuin init zsh)"
@@ -117,6 +147,10 @@ export FZF_DEFAULT_OPTS=" \
 #ssh-add ~/.ssh/id_ed25519
 #'
 
+fcd(){
+  local dir
+  dir=$(find ${1:-.} -type d -not -path '*/\.*' 2> /dev/null | fzf +m) && cd "$dir"
+}
 
 export PATH=$HOME/.config/rofi/scripts:$PATH
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
