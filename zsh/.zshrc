@@ -94,9 +94,13 @@ alias seek='pacseek'
 alias y='yazi'
 
 gh_open() {
-  REPO_URL=$(git config --get remote.origin.url | sed 's/git@github.com:/https:\/\/github.com\//;s/.git$//')
-  [ -n "$REPO_URL" ] && xdg-open "$REPO_URL"
+  xdg-open "https://github.com/ad1822/$1" 
 }
+
+backup_dots(){
+  exec syncAll.sh
+}
+
 
 
 extract() {
