@@ -1,10 +1,30 @@
-#!/bin/bash
-is_cava_ServerExist=`ps -ef|grep -m 1 cava|grep -v "grep"|wc -l`
-if [ "$is_cava_ServerExist" = "0" ]; then
-	echo "cava_server not found" > /dev/null 2>&1
-#	exit;
-elif [ "$is_cava_ServerExist" = "1" ]; then
-  killall cava
-fi
+#! /bin/bash
 
-cava -p ~/.config/cava/config | sed -u 's/;//g;s/0/▁/g;s/1/▂/g;s/2/▃/g;s/3/▄/g;s/4/▅/g;s/5/▆/g;s/6/▇/g;s/7/█/g;'
+bar="▁▂▃▄▅▆▇█"
+dict="s/;//g;"
+
+# creating "dictionary" to replace char with bar
+i=0
+while [ $i -lt ${#bar} ]
+do
+    dict="${dict}s/$i/${bar:$i:1}/g;"
+    i=$((i=i+1))
+done
+
+# write cava config
+config_file="/tmp/polybar_cava_config"
+echo "
+[general]
+bars = 6
+
+[output]
+method = raw
+raw_target = /dev/stdout
+data_format = ascii
+ascii_max_range = 5
+" > $config_file
+
+# read stdout from cava
+cava -p $config_file | while read -r line; do
+    echo $line | sed $dict
+done

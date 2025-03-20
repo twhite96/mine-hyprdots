@@ -17,9 +17,10 @@
   color: #8fbc8f;
   border-left: 0px;
   border-right: 0px;
-  padding-bottom: 6px;
+  padding: 6px;
   font-family: 'bargraph';
-  font-size: 22px;
+  background: @raisin-black;
+  margin: 0px 2px;
 }
 
 #cpu {
