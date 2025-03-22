@@ -1,15 +1,17 @@
 {
   "layer": "top",
-  "style": "~/.config/waybar/style-4.css",
   // "position": "bottom",
   "margin-left": 3,
   "margin-right": 3,
   "margin-top": 2,
   "margin-bottom": 0,
-  "modules-left": ["hyprland/workspaces", "cpu", "memory", "network#speed"],
-  "modules-center": ["clock"],
-  "modules-right": [
-    "custom/cava",
+  "modules-center": [
+    "hyprland/workspaces",
+    "cpu",
+    "memory",
+    "network#speed",
+    "clock",
+    // "custom/cava",
     "temperature#gpu",
     "custom/transparency",
     "custom/wallpaper",

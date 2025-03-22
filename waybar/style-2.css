@@ -1,12 +1,10 @@
 @import 'mocha.css';
 
-/* reset all styles */
 * {
   font-family: JetBrains Mono Nerd Font;
-  min-height: 18px;
+  min-height: 14px;
   font-size: 12px;
   border: none;
-  /* border-radius: 2px; */
   padding: 0;
   margin: 0;
   box-shadow: none;
@@ -14,46 +12,33 @@
   background-color: transparent;
 }
 
-#custom-weather {
-  /* margin-left: 6px; */
-  padding: 0px 8px;
-  background: @raisin-black;
-  color: @beige;
-}
-
-#keyboard-state {
+#custom-cava {
+  color: #8fbc8f;
+  border-left: 0px;
+  border-right: 0px;
+  padding: 6px;
+  font-family: 'bargraph';
   background: @raisin-black;
 }
-
 #cpu {
   color: @beige;
   padding: 0px 8px 0px 15px;
-  /* border-radius: 0px; */
-  /* border-top-left-radius: 6px; */
-  /* border-bottom-left-radius: 6px; */
   background: @raisin-black;
-  /* margin-left: 6px; */
 }
 
 #memory {
   color: @beige;
   padding: 0px 15px 0px 8px;
-  /* border-radius: 0px; */
-  /* border-top-right-radius: 6px; */
-  /* border-bottom-right-radius: 6px; */
   background: @raisin-black;
-  /* margin-right: 2px; */
 }
 
 #temperature.gpu {
   padding: 0px 12px;
-  /* margin-right: 6px; */
   color: @celadon;
   background: @raisin-black;
 }
 
-/* general */
-
+/* General Styling */
 tooltip,
 menu,
 #workspaces,
@@ -65,32 +50,12 @@ menu,
 #battery,
 #custom-power {
   background: @raisin-black;
-  padding-bottom: 7px;
-  padding-top: 7px;
+  padding: 7px 8px;
   margin: 0;
 }
 
-tooltip {
-  border: 1px solid @beige;
-}
-
-.modules-right,
-.modules-center,
-.modules-left {
-  padding: 0 5px;
-}
-
-#custom-wallpaper {
-  font-size: 20px;
-  font-family: 'Font Awesome 5 Free';
-  padding: 0px 8px;
-  /* margin-right: 4px; */
-  color: #f38ba8;
-  background: @raisin-black;
-}
-
 #workspaces {
-  background: #1e1e2e;
+  background: @raisin-black;
   margin: 0;
   padding: 0;
   font-weight: bold;
@@ -98,16 +63,15 @@ tooltip {
   opacity: 1;
   font-size: 16px;
   color: #1e1;
+  border-radius: 6px 0px 0px 6px;
 }
 
 #workspaces button {
-  /* padding: 0px 3px; */
-  /* margin: 5px; */
-  border-radius: 0px;
+  padding: 0px 5px;
+  border-radius: 6px;
   border: none;
-  min-width: 30px;
   color: #f5e0dc;
-  background-color: #1e1e2e;
+  /* background-color: #1e1e2e; */
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
 }
@@ -115,7 +79,7 @@ tooltip {
 #workspaces button.active {
   color: #1e1e2e;
   background: #cba6f7;
-  min-width: 30px;
+  min-width: 20px;
   opacity: 1;
 }
 
@@ -125,6 +89,7 @@ tooltip {
   opacity: 1;
   animation: none;
 }
+
 #clock {
   padding: 0 15px;
   color: @beige;
@@ -134,7 +99,6 @@ tooltip {
   font-size: 18px;
   transition: none;
   padding: 0px 10px;
-  /* margin-right: 6px; */
   background: @raisin-black;
   color: rgba(137, 220, 235, 1);
 }
@@ -144,13 +108,21 @@ tooltip {
   background: @raisin-black;
   color: #94e2d5;
   padding: 0px 14px;
-  /* margin-right: 6px; */
+  /* margin-right: 2px; */
+  /* border-radius: 0 6px 6px 0; */
+}
+
+#custom-wallpaper {
+  font-size: 20px;
+  font-family: 'Font Awesome 5 Free';
+  padding: 0px 8px;
+  color: #f38ba8;
+  background: @raisin-black;
 }
 
 #pulseaudio,
 #backlight {
   padding: 0 8px;
-  /* margin: 0 2px; */
   color: @beige;
 }
 
@@ -169,49 +141,54 @@ tooltip {
 #bluetooth {
   min-width: 20px;
   padding: 0 10px;
-  /* margin: 0 2px; */
 }
+
 #network {
   min-width: 30px;
   padding: 0 7px 0 2px;
   /* margin: 0 2px; */
+  /* border-radius: 0 6px 6px 0; */
 }
+
 #battery {
   color: @mint;
   min-width: 30px;
   padding-left: 5px;
-  /* margin: 0 2px; */
-  padding-right: 5px;
 }
 
 #battery.charging {
-  color: #eff1f5; /* Text */
-  background: #40a02b; /* Green */
+  color: #33ae18; /* Text */
+  background: @raisin-black;
+  border-radius: 0px 6px 6px 0px;
 }
 
 #battery.good:not(.charging) {
-  color: #f9e2af; /* Peach */
-  background: #1e1e2e; /* Base */
+  color: #f8d589;
+  background: @raisin-black;
+  border-radius: 0px 6px 6px 0px;
 }
 
 #battery.warning:not(.charging) {
-  color: #eff1f5; /* Text */
-  background: #df8e1d; /* Yellow */
+  color: #e0a858; /* Text */
+  background: @raisin-black;
+  border-radius: 0px 6px 6px 0px;
 }
 
 #battery.low:not(.charging) {
-  color: #eff1f5; /* Text */
-  background: #d20f39; /* Red */
+  color: #d20f39; /* Text */
+  background: @raisin-black;
+  border-radius: 0px 6px 6px 0px;
 }
 
 #battery.critical:not(.charging) {
-  color: #eff1f5; /* Text */
-  background: #d20f39; /* Red */
+  color: #d20f39; /* Text */
+  background: @raisin-black;
   animation-name: blink;
   animation-duration: 0.75s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  border-radius: 0px 6px 6px 0px;
 }
 
 @keyframes blink {
