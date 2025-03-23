@@ -105,6 +105,19 @@ alias ....='cd ../..'
 alias ..='cd ..'
 alias ~='cd ~'
 
+cpcf() {
+    local file
+
+    file=$(fzf --query="$1" --preview 'bat --color=always {}' --preview-window 'right:60%' --bind 'ctrl-d:preview-page-down,ctrl-u:preview-page-up')
+
+    if [ -n "$file" ]; then
+        cat "$file" | wl-copy
+        echo "Copied: $file"
+    else
+        echo "No file selected."
+    fi
+}
+
 gh_open() {
   xdg-open "https://github.com/ad1822/$1"
 }
