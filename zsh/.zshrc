@@ -89,6 +89,9 @@ eval "$(atuin init zsh)"
 eval "$(starship init zsh)"
 
 alias vim='nvim'
+
+alias kls='kubectl get all'
+
 alias jump='nvim $(fzf -m --preview="bat --color=always {}")'
 alias ls='eza -l -i --header  --tree --level=1  --all --sort=Name'
 alias search='eval "~/.local/bin/search.sh"'
@@ -169,3 +172,6 @@ take() {
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 complete -C '/usr/bin/aws_completer' aws
+
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
