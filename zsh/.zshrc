@@ -90,6 +90,8 @@ eval "$(starship init zsh)"
 
 alias vim='nvim'
 
+alias gh-create='gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
+
 alias kls='kubectl get all'
 
 alias jump='nvim $(fzf -m --preview="bat --color=always {}")'

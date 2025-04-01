@@ -21,7 +21,8 @@
   ],
   "custom/cava": {
     "format": "{}",
-    "exec": "~/.config/waybar/scripts/cava.sh"
+    "exec": "~/.config/waybar/scripts/cava.sh",
+    "on-click": "kitty cava"
   },
   "temperature#gpu": {
     "thermal-zone": 5,
