@@ -169,6 +169,10 @@ take() {
     mkdir -p "$1" && cd "$1"
 }
 
+c() {
+  cd "$1" && ls
+}
+
 #fastfetch
 
 autoload -U +X bashcompinit && bashcompinit

@@ -9,9 +9,12 @@ exec-once = wl-paste --type text --watch cliphist store
 exec-once = wl-paste --type image --watch cliphist store
 exec-once = hyprpaper & waybar
 exec-once = hypridle
+#windowrulev2 = suppressevent maximize, class:.*
 
+#windowrule = float, kitty
+#windowrule = size 1000 500, kitty
+# windowrulev2 = workspace 2, class:kitty
 windowrulev2 = workspace 1, class:zen-alpha
-windowrulev2 = workspace 1, class:firefox-bin
 windowrulev2 = workspace 3, class:Code
 windowrulev2 = workspace 1, class:obsidian
 windowrulev2 = workspace 9, class:Docker Desktop
@@ -20,6 +23,7 @@ exec-once = [workspace 1] zen-browser
 exec-once = [workspace 2] kitty
 
 
+# Set programs that I use
 $terminal = kitty
 $fileManager = yazi
 $menu = rofi -show run
@@ -53,13 +57,13 @@ decoration {
     dim_special = 0.2
     rounding = 6
 
-active_opacity = 0.95
+active_opacity = 1
     inactive_opacity = 0.75
 
     shadow {
-        enabled = true
-        # range = 3
-        # render_power = 1
+        # enabled = false
+        # range = 4
+        # render_power = 3
     }
 
     blur {
@@ -72,33 +76,65 @@ active_opacity = 0.95
 
 }
 
+# animations {
+#     enabled = true
+
+#     bezier = myBezier, 0.05, 0.9, 0.1, 1.05
+
+#     animation = windows, 1, 4, default, slide top
+#     animation = windowsOut, 1, 2, default, slide bottom
+#     animation = border, 1, 10, default
+#     animation = borderangle, 1, 8, default
+#     animation = fade, 1, 7, default
+#     animation = workspaces, 1, 3, default
+    # animation = layers, 1, 3, smoothOut, slide
+
+# }
+
+# animations {
+#     enabled = true
+
+#     bezier = overshot, 0.05, 0.9, 0.1, 1.1
+#     bezier = smoothOut, 0.36, -0.2,1.1,0
+#     bezier = smoothIn, 0.25, 1, 0.5, 1
+
+#     animation = windows, 1, 5, overshot, slide
+#     animation = windowsOut, 1, 4, smoothIn, slide
+#     animation = windowsMove, 1, 5, smoothIn, slide
+
+#     animation = border, 1, 10, default
+#     animation = borderangle, 1, 8, default
+
+#     animation = fade, 1, 7, default
+
+#     animation = workspaces, 1, 4, overshot, slidefade 15%
+#     animation = specialWorkspace, 1, 4, smoothIn, slidefade 15%
+
+#     # animation = layers, 1, 5, overshot, slidefade 40%
+
+# }
 
 animations {
-    enabled = true
-    bezier = easeOutQuint, 0.23,1,0.32,1
-    bezier = easeInOutCubic, 0.65,0.05,0.36,1
-    bezier = linear, 0,0,1,1
-    bezier = almostLinear, 0.5,0.5,0.75,1.0
-    bezier = quick, 0.15,0,0.1,1
-    animation = windowsIn, 1, 10, easeOutQuint
-    animation = workspacesOut, 1, 5.39, easeInOutCubic
-    animation = windows, 1, 4.79, easeOutQuint
-    animation = windowsIn, 1, 4.1, easeOutQuint, popin 87%
-    animation = windowsOut, 1, 1.49, linear, popin 87%
-    animation = fadeIn, 1, 1.73, almostLinear
-    animation = fadeOut, 1, 1.46, almostLinear
-    animation = fade, 1, 3.03, quick
-    animation = layers, 1, 3.81, easeOutQuint
-    animation = layersIn, 1, 4, easeOutQuint, fade
-    animation = layersOut, 1, 1.5, linear, fade
-    animation = fadeLayersIn, 1, 1.79, almostLinear
-    animation = fadeLayersOut, 1, 1.39, almostLinear
-    animation = workspaces, 1, 1.94, almostLinear, fade
-    animation = workspacesIn, 1, 1.21, almostLinear, fade
-    animation = workspacesOut, 1, 1.94, almostLinear, fade
+   enabled = 1
+   bezier = overshot,0.13,0.99,0.29,1.15
+   bezier = win, 0.15,0.90,0.25,1.2
+   bezier = wind, 0.05, 0.9, 0.1, 1.05
+   bezier = winIn, 0.1, 1.1, 0.1, 1.1
+   bezier = winOut, 0.3, -0.3, 0, 1
+   bezier = liner, 1, 1, 1, 1
+
+  # animation = windows, 1, 6, wind, slide
+  animation = windowsIn, 1, 5, overshot, slide
+  animation = windowsOut, 1, 5, overshot, slide
+  animation = windowsMove, 1, 5, wind, slide
+  animation = border, 1, 1, liner
+  animation = fade, 1, 10, default
+  animation = workspaces, 1, 5, overshot, slide
+  animation = layers, 1, 5, overshot, slidefade 40%
+
+#   animation = layersIn, 1, 4, overshot, slide
+#   animation = layersOut, 1, 7, overshot, slide 10%
 }
-
-
 
 
 dwindle {
@@ -150,8 +186,8 @@ xwayland {
 }
 
 misc {
-    force_default_wallpaper = -1
-    disable_hyprland_logo = true
+    force_default_wallpaper = -1 # Set to 0 or 1 to disable the anime mascot wallpapers
+    disable_hyprland_logo = true # If true disables the random hyprland logo / anime girl background. :(
 }
 
 $mainMod = SUPER
@@ -178,8 +214,7 @@ bind = $mainMod, Space, exec, ~/.config/rofi/launcher/launcher.sh
 
 #Grim & Slurp  for Screenshot
 bind = $mainMod_Shift, S, exec, slurp | grim -g - /tmp/photo && wl-copy < /tmp/photo && notify-send 'Screenshot Copied to Clipboard'
-bind = Alt+Shift, S, exec, grim -g "$(slurp)" $HOME/Pictures/Screenshot/$(date +'%Y%m%d%H%M%S').png && notify-send 'Screenshot Saved'
-
+bind = Alt+Shift, S, exec, grim -g "$(slurp)" $HOME/Downloads/Screenshot/$(date +'%Y%m%d%H%M%S').png && notify-send 'Screenshot Saved'
 bind = Alt+Shift, W, exec, pkill -9 waybar ||  waybar &
 
 #Task Manager
@@ -188,32 +223,37 @@ bind = Ctrl_Shift, Tab, exec, $terminal $taskManager
 #ColorPicker
 bind = $mainMod, C, exec, $colorpicker -a
 
-bind = $mainMod, I, exec, kitty -e /home/arcadian/SideProjects/Scripts/sync/selectWallpaper.sh
+bind = $mainMod, I, exec, bash -c "~/SideProjects/Scripts/selectWallpaper.sh"#Clipboard for Copy / Paste
 bind = $mainMod, M, exec, ~/.config/rofi/clipboard/launcher.sh
-
+#Audio Control
+binde = , XF86AudioRaiseVolume, exec, wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 2%+
+bindl = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-
 
 #Volume Control
-binde = , xf86audioraisevolume, exec, pamixer -i 2 && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.svg -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"
-binde = , xf86audiolowervolume, exec, pamixer -d 2 && dunstify -h int:value:"$(pamixer --get-volume)" -i ~/.config/dunst/assets/volume.svg -t 500 -r 2593 "Volume: $(pamixer --get-volume) %"
-binde = , xf86AudioMute, exec, pamixer -t && dunstify -i ~/.config/dunst/assets/$(pamixer --get-mute | grep -q "true" && echo "volume-mute.svg" || echo "volume.svg") -t 500 -r 2593 "Toggle Mute"
-
+# binde = , XF86AudioRaiseVolume, exec, ~/.local/bin/volume.sh up
+# binde = , XF86AudioLowerVolume, exec, ~/.local/bin/volume.sh down
+# binde = , XF86AudioMute, exec, ~/.local/bin/volume.sh mute
+# binde = , XF86AudioRaiseVolume, exec, ~/.local/bin/volume.sh --inc
+# binde = , XF86AudioLowerVolume, exec, ~/.local/bin/volume.sh --dec
+# binde = , XF86AudioMute, exec, ~/.local/bin/volume.sh --toggle
 
 #Player Control
 bindl = , XF86AudioPlay, exec, playerctl play-pause
 bindl = , XF86AudioPrev, exec, playerctl previous
 bindl = , XF86AudioNext, exec, playerctl next
 
-
 #Brightness Control
-binde = , XF86MonBrightnessDown,exec,brillo -q -U 5 && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"
-binde = , XF86MonBrightnessUp,exec,brillo -q -A 5 && dunstify -h int:value:"$(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))"  -i ~/.config/dunst/assets/brightness.svg -t 500 -r 2593 "Brightness: $(( ($(cat /sys/class/backlight/*/brightness) * 100) / $(cat /sys/class/backlight/*/max_brightness) ))%"
+binde = , XF86MonBrightnessDown, exec, ~/.local/bin/backlight.sh down
+binde = , XF86MonBrightnessUp, exec, ~/.local/bin/backlight.sh up
+
+# binde = , XF86MonBrightnessDown, exec, brightnessctl set 2%-
+# binde = , XF86MonBrightnessUp, exec, brightnessctl set +2%
 
 bind = $mainMod_Shift, l, exec, hyprlock
 
 bind = Alt, Tab , cyclenext
 bind = $mainMod, Tab, bringactivetotop,
 bind = Alt Shift, Tab, cyclenext, prev
-
 # bind = $mainMod, Tab, workspace, e-2
 bind = $mainMod, A, exec,bash  ~/.config/rofi/wifi/wifi.sh
 bind = $mainMod, S, exec,bash ~/.config/rofi/search/search.sh
@@ -250,6 +290,7 @@ bind = $mainMod SHIFT, 8, movetoworkspace, 8
 bind = $mainMod SHIFT, 9, movetoworkspace, 9
 bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
+#bindl = , CapsLock, exec, ~/.local/bin/lockctl/key.sh
 
 # Example special workspace (scratchpad)
 #bind = $mainMod, S, togglespecialworkspace, magic
