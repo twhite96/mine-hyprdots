@@ -1,15 +1,27 @@
-<!-- ![terminal](Assets/terminal.png) -->
+<h1 align="center">Hyprdots - Aesthetic Dotfiles for Hyprland</h1>
 
-![home](Assets/home.png)
+<p align="center">
+  <a href="https://github.com/ad1822/hyprdots/stars">
+    <img src="https://img.shields.io/github/stars/ad1822/hyprdots?style=for-the-badge" alt="Stars">
+  </a>
+  <a href="https://github.com/ad1822/hyprdots/forks">
+    <img src="https://img.shields.io/github/forks/ad1822/hyprdots?style=for-the-badge" alt="Stars">
+  </a>
+  <!-- <a href="https://github.com/ad1822/hyprdots/network/members">
+    <img src="https://img.shields.io/github/forks/your-username/hyprdots?style=for-the-badge" alt="Forks">
+  </a> -->
+  <a href="https://github.com/your-username/hyprdots/commits/main">
+    <img src="https://img.shields.io/github/last-commit/ad1822/hyprdots?style=for-the-badge" alt="Last Commit">
+  </a>
+</p>
+
+![home](Assets/main.png)
+![powermenu](Assets/k9s_cava.png)
 ![btop](Assets/btop.png)
 ![golang](Assets/go.png)
 ![powermenu](Assets/powermenu.png)
-
-<!-- ![nvim](Assets/nvim.png) -->
-
+![powermenu](Assets/go_2.png)
 ![launcher](Assets/launcher.png)
-
-<!-- ![obsidian](Assets/obsidian.png) -->
 
 ## Wallpaper
 
