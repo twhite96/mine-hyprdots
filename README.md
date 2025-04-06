@@ -18,7 +18,6 @@
 ![home](Assets/main.png)
 ![powermenu](Assets/k9s_cava.png)
 ![btop](Assets/btop.png)
-![golang](Assets/go.png)
 ![powermenu](Assets/powermenu.png)
 ![powermenu](Assets/go_2.png)
 ![launcher](Assets/launcher.png)
