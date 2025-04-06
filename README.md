@@ -1,17 +1,19 @@
 <h1 align="center">Hyprdots - Aesthetic Dotfiles for Hyprland</h1>
 
-[![Hyprland](https://img.shields.io/badge/Hyprland-abd6fd?style=for-the-badge "Hyprland - A dynamic tiling Wayland compositor based on wlroots that doesn't sacrifice on its looks")](https://hyprland.org/)
-[![Waybar](https://img.shields.io/badge/Waybar-cdd6f4?style=for-the-badge 'Waybar - Highly customizable Wayland bar for Sway and Wlroots based compositors')](https://github.com/Alexays/Waybar)
-[![Hyprlock](https://img.shields.io/badge/Hyprlock-89dceb?style=for-the-badge "Hyprlock - Hyprland's GPU-accelerated screen locking utility")](https://github.com/hyprwm/hyprlock)
-[![Zsh](https://img.shields.io/badge/zsh-f2cdcd?style=for-the-badge 'Z Shell')](https://www.gnu.org/software/bash/manual/zsh.html)
-[![Kitty](https://img.shields.io/badge/Alacritty-cba6f7?style=for-the-badge 'Kitty - Cross-platform, fast, feature-rich, GPU based terminal ')](https://github.com/kovidgoyal/kitty)
-[![Rofi](https://img.shields.io/badge/Rofi-fab387?style=for-the-badge 'Rofi- A window switcher, application launcher and dmenu replacement')](https://github.com/lbonn/rofi)
-[![Cliphist](https://img.shields.io/badge/Cliphist-cdd6f4?style=for-the-badge 'Cliphist - Wayland clipboard manager')](https://github.com/sentriz/cliphist)
-[![Zathura](https://img.shields.io/badge/Zathura-94e2d5?style=for-the-badge 'Zathura is a highly customizable and functional document viewer')](https://github.com/pwmt/zathura)
-[![Sddm](https://img.shields.io/badge/Sddm-a6e3a1?style=for-the-badge 'Simple Desktop Display Manager')](https://github.com/sddm/sddm)
-[![Hyprlock](https://img.shields.io/badge/Swaylock-f9e2af?style=for-the-badge 'Hyprlock - Screen locking utility for Wayland compositors')](https://github.com/hyprwm/hyprlock)
-[![Dunst](https://img.shields.io/badge/Dunst-fab387?style=for-the-badge 'Dunst - Lightweight and customizable notification daemon')](https://github.com/dunst-project/dunst)
-[![Tmux](https://img.shields.io/badge/Tmux-a6e3a1?style=for-the-badge 'Terminal Multiplexer')](https://github.com/tmux/tmux/)
+<p align="center">
+  <a href="https://hyprland.org/"><img src="https://img.shields.io/badge/Hyprland-abd6fd?style=for-the-badge" alt="Hyprland - A dynamic tiling Wayland compositor based on wlroots that doesn't sacrifice on its looks" /></a>
+  <a href="https://github.com/Alexays/Waybar"><img src="https://img.shields.io/badge/Waybar-cdd6f4?style=for-the-badge" alt="Waybar - Highly customizable Wayland bar for Sway and Wlroots based compositors" /></a>
+  <a href="https://github.com/hyprwm/hyprlock"><img src="https://img.shields.io/badge/Hyprlock-89dceb?style=for-the-badge" alt="Hyprlock - Hyprland's GPU-accelerated screen locking utility" /></a>
+  <a href="https://www.gnu.org/software/bash/manual/zsh.html"><img src="https://img.shields.io/badge/zsh-f2cdcd?style=for-the-badge" alt="Z Shell" /></a>
+  <a href="https://github.com/kovidgoyal/kitty"><img src="https://img.shields.io/badge/Kitty-cba6f7?style=for-the-badge" alt="Kitty - Cross-platform, fast, feature-rich, GPU based terminal" /></a>
+  <a href="https://github.com/lbonn/rofi"><img src="https://img.shields.io/badge/Rofi-fab387?style=for-the-badge" alt="Rofi - A window switcher, application launcher and dmenu replacement" /></a>
+  <a href="https://github.com/sentriz/cliphist"><img src="https://img.shields.io/badge/Cliphist-cdd6f4?style=for-the-badge" alt="Cliphist - Wayland clipboard manager" /></a>
+  <a href="https://github.com/pwmt/zathura"><img src="https://img.shields.io/badge/Zathura-94e2d5?style=for-the-badge" alt="Zathura is a highly customizable and functional document viewer" /></a>
+  <a href="https://github.com/sddm/sddm"><img src="https://img.shields.io/badge/Sddm-a6e3a1?style=for-the-badge" alt="Simple Desktop Display Manager" /></a>
+  <a href="https://github.com/hyprwm/hyprlock"><img src="https://img.shields.io/badge/Swaylock-f9e2af?style=for-the-badge" alt="Hyprlock - Screen locking utility for Wayland compositors" /></a>
+  <a href="https://github.com/dunst-project/dunst"><img src="https://img.shields.io/badge/Dunst-fab387?style=for-the-badge" alt="Dunst - Lightweight and customizable notification daemon" /></a>
+  <a href="https://github.com/tmux/tmux/"><img src="https://img.shields.io/badge/Tmux-a6e3a1?style=for-the-badge" alt="Terminal Multiplexer" /></a>
+</p>
 
 <p align="center">
   <a href="https://github.com/ad1822/hyprdots/stars">
