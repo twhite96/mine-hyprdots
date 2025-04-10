@@ -10,7 +10,6 @@
   <a href="https://github.com/sentriz/cliphist"><img src="https://img.shields.io/badge/Cliphist-cdd6f4?style=for-the-badge" alt="Cliphist - Wayland clipboard manager" /></a>
   <a href="https://github.com/pwmt/zathura"><img src="https://img.shields.io/badge/Zathura-94e2d5?style=for-the-badge" alt="Zathura is a highly customizable and functional document viewer" /></a>
   <a href="https://github.com/sddm/sddm"><img src="https://img.shields.io/badge/Sddm-a6e3a1?style=for-the-badge" alt="Simple Desktop Display Manager" /></a>
-  <a href="https://github.com/hyprwm/hyprlock"><img src="https://img.shields.io/badge/Swaylock-f9e2af?style=for-the-badge" alt="Hyprlock - Screen locking utility for Wayland compositors" /></a>
   <a href="https://github.com/dunst-project/dunst"><img src="https://img.shields.io/badge/Dunst-fab387?style=for-the-badge" alt="Dunst - Lightweight and customizable notification daemon" /></a>
   <a href="https://github.com/tmux/tmux/"><img src="https://img.shields.io/badge/Tmux-a6e3a1?style=for-the-badge" alt="Terminal Multiplexer" /></a>
 </p>
