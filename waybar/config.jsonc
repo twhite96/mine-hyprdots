@@ -1,7 +1,5 @@
 {
   "layer": "top",
-  "style": "~/.config/waybar/style-4.css",
-  // "position": "bottom",
   "margin-left": 3,
   "margin-right": 3,
   "margin-top": 2,
@@ -54,16 +52,6 @@
     "min-length": 20,
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
   },
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "scrolllock": false,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "\uf023",
-      "unlocked": "\uf3c1"
-    }
-  },
   "custom/launcher": {
     "format": "",
     "tooltip": false,
@@ -110,16 +98,16 @@
     "exec": "wttrbar --location 'Ahmedabad'",
     "return-type": "json"
   },
-
   "clock": {
-    "format": "{:%I:%M %p • %a %d/%m}",
+    "format": "{:%I:%M %p || %a %d/%m}",
     "tooltip": true,
     "tooltip-format": "<tt>{calendar}</tt>"
   },
   "custom/wallpaper": {
     "format": "\uf03e",
     "on-click": "~/.config/waybar/scripts/change-wallpaper.sh && hyprpaper",
-    "tooltip": false
+    "tooltip": false,
+    "on-click-right": "kitty -e ~/SideProjects/dotsh/mics/select-wallpaper.sh"
   },
   "network": {
     "format-wifi": " {icon}",
@@ -130,7 +118,7 @@
     "tooltip-format-wifi": " {bandwidthDownBytes} |  {bandwidthUpBytes} | {essid}",
     "tooltip-format-disconnected": "Disconnected",
     "on-click": "exec ~/.config/rofi/wifi/wifi.sh",
-    "on-click-right": "alacritty -e nmtui"
+    "on-click-right": "kitty -e nmtui"
   },
   "battery": {
     "states": {

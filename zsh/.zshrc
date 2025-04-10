@@ -16,7 +16,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light xylous/gitstatus
 # zinit ice wait'0'  # Load asynchronously
-# zinit light zsh-users/zsh-autosuggestions
 
 zinit light zsh-users/zsh-history-substring-search
 
@@ -58,10 +57,6 @@ cd_menu() {
 
 zle -N cd_menu
 bindkey '^L' cd_menu
-zle -N cd_menu
-bindkey '^L' cd_menu
-
-
 
 HISTSIZE=5001
 HISTFILE=~/.zsh_history
@@ -173,11 +168,8 @@ c() {
   cd "$1" && ls
 }
 
-#fastfetch
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 complete -C '/usr/bin/aws_completer' aws
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-
