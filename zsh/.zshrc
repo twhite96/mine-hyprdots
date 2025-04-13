@@ -4,8 +4,8 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export EDITOR=/bin/nvim
 
 if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+    mkdir -p "$(dirname $ZINIT_HOME)"
+    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
 source "${ZINIT_HOME}/zinit.zsh"
@@ -43,16 +43,16 @@ bindkey '^n' history-search-forward
 bindkey '^[w' kill-region
 
 cd_up() {
-  cd ..
-  zle reset-prompt
+    cd ..
+    zle reset-prompt
 }
 zle -N cd_up
 bindkey '^H' cd_up
 
 cd_menu() {
-  local dir
-  dir=$(eza -1 --color=always --icons --group-directories-first | fzf --ansi --preview 'eza --tree --level=1 --icons --color=always {}')
-  [[ -n "$dir" ]] && cd "$dir" && zle reset-prompt
+    local dir
+    dir=$(eza -1 --color=always --icons --group-directories-first | fzf --ansi --preview 'eza --tree --level=1 --icons --color=always {}')
+    [[ -n "$dir" ]] && cd "$dir" && zle reset-prompt
 }
 
 zle -N cd_menu
@@ -105,11 +105,15 @@ alias ....='cd ../..'
 alias ..='cd ..'
 alias ~='cd ~'
 
+edit() {
+    vim ~/.config/$1
+}
+
 cpcf() {
     local file
-
+    
     file=$(fzf --query="$1" --preview 'bat --color=always {}' --preview-window 'right:60%' --bind 'ctrl-d:preview-page-down,ctrl-u:preview-page-up')
-
+    
     if [ -n "$file" ]; then
         cat "$file" | wl-copy
         echo "Copied: $file"
@@ -119,44 +123,44 @@ cpcf() {
 }
 
 gh_open() {
-  xdg-open "https://github.com/ad1822/$1"
+    xdg-open "https://github.com/ad1822/$1"
 }
 
 backup_dots(){
-  exec syncAll.sh
+    exec syncAll.sh
 }
 
 
 fcd(){
-  local dir
-  dir=$(find ${1:-.} -type d -not -path '*/\.*' 2> /dev/null | fzf +m) && cd "$dir"
+    local dir
+    dir=$(find ${1:-.} -type d -not -path '*/\.*' 2> /dev/null | fzf +m) && cd "$dir"
 }
 
 extract() {
-  if [ -f "$1" ]; then
-    case "$1" in
-      *.tar.gz)  tar -xzf "$1"      ;;
-      *.tar.xz)  tar -xf "$1"       ;;
-      *.tar.bz2) tar -xjf "$1"      ;;
-      *.gz)      gunzip "$1"        ;;
-      *.bz2)     bunzip2 "$1"       ;;
-      *.zip)     unzip "$1"         ;;
-      *.Z)       uncompress "$1"    ;;
-      *.7z)      7z x "$1"          ;;
-      *)         echo "'$1' cannot be extracted" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
+    if [ -f "$1" ]; then
+        case "$1" in
+            *.tar.gz)  tar -xzf "$1"      ;;
+            *.tar.xz)  tar -xf "$1"       ;;
+            *.tar.bz2) tar -xjf "$1"      ;;
+            *.gz)      gunzip "$1"        ;;
+            *.bz2)     bunzip2 "$1"       ;;
+            *.zip)     unzip "$1"         ;;
+            *.Z)       uncompress "$1"    ;;
+            *.7z)      7z x "$1"          ;;
+            *)         echo "'$1' cannot be extracted" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
 }
 
 killp() {
-  ps aux | fzf | awk '{print $2}' | xargs kill -9
+    ps aux | fzf | awk '{print $2}' | xargs kill -9
 }
 
 j() {
-  local dir
-  dir=$(eza -1 --color=always --icons --group-directories-first  | fzf --ansi) && cd "$(echo "$dir" | awk '{print $NF}')"
+    local dir
+    dir=$(eza -1 --color=always --icons --group-directories-first  | fzf --ansi) && cd "$(echo "$dir" | awk '{print $NF}')"
 }
 
 
@@ -165,7 +169,7 @@ take() {
 }
 
 c() {
-  cd "$1" && ls
+    cd "$1" && ls
 }
 
 autoload -U +X bashcompinit && bashcompinit
