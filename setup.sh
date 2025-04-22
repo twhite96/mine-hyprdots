@@ -12,13 +12,15 @@ cat << EOF | lolcat
 EOF
 
 echo "Copying config files..."
-cp -r cava dunst fastfetch gtk-3.0 gtk-4.0 hypr hypridle rofi starship tmux waybar yazi ~/.config/
+cp -r cava kitty dunst fastfetch gtk-3.0 gtk-4.0 hypr hypridle rofi starship tmux waybar yazi ~/.config/
 
 cp -r bin ~/.local/bin/
 
 cd ~/.local/bin/
 chmod +x *
 
+
+cd ~/hyprdots/
 
 echo "Copying .zshrc..."
 cp zsh/.zshrc ~/.zshrc
