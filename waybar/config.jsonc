@@ -17,6 +17,9 @@
     // "bluetooth",
     "battery"
   ],
+  "hyprland/window": {
+    "format": "󰣇 {}"
+  },
   "custom/cava": {
     "format": "{}",
     "exec": "~/.config/waybar/scripts/cava.sh",
@@ -99,7 +102,7 @@
     "return-type": "json"
   },
   "clock": {
-    "format": "{:%I:%M %p || %a %d/%m}",
+    "format": "{:%I:%M %p ☲ %a %d/%m}",
     "tooltip": true,
     "tooltip-format": "<tt>{calendar}</tt>"
   },
