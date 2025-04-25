@@ -29,101 +29,50 @@
   </a>
 </p>
 
+<!-- ##### Home: -->
+
 ![home](Assets/main.png)
+
+<!-- ##### K9s and Cava: -->
+
 ![powermenu](Assets/k9s_cava.png)
+
+<!-- ##### Yazi and Btop: -->
+
 ![btop](Assets/btop.png)
+
+<!-- ##### Powermenu: -->
+
 ![powermenu](Assets/powermenu.png)
+
+<!-- ##### GoLang Showcase : -->
+
 ![powermenu](Assets/go_2.png)
+
+<!-- ##### Launcher: -->
+
 ![launcher](Assets/launcher.png)
 
 ## Wallpaper
 
 [Wallpaper](https://drive.google.com/drive/folders/1Eog40yvrTshjDLVIETVncBKcDsvPLMIX?usp=sharing)
 
-## File System
+# Quick Installation
 
-- **File System**: btrfs
+1. Clone this repo to your `~` or `/home/username`path
 
-## Boot Loader
+```sh
+git clone https://github.com/ad1822/hyprdots
+```
 
-- **Boot Loader**: GNU GRUB (Grand Unified Boot Loader)
+2. Navigate to it
 
-## Login Manager & Session Manager
+```sh
+cd ~/hyprdots
+```
 
-- **Login Manager & Session Manager**: SDDM (Simple Desktop Display Manager)
+3. Run this installer
 
-## Package Management
-
-- **Default**: pacman
-- **Others**: wget, Homebrew
-
-## Fonts
-
-- **Fonts**: JetBrains Mono Nerd Fonts
-
-## Audio
-
-- **Audio System**: Pipewire
-
----
-
-### GUI Setup
-
-- **Window Manager**: hyprland (Tiling)
-- **Status Bar**: Waybar
-- **Notification Manager**: Dunst
-- **Browser**: Firefox
-- **Image Viewer**: feh
-- **Video Player**: VLC
-- **Color Picker**: hyprpicker
-- **Wallpaper Utility**: hyprpaper
-- **Screenshot Utility**: grim & slurp
-- **File Manager**: Thunar
-- **App Launcher**: Rofi
-- **Wi-Fi & Bluetooth Management**: Rofi
-
----
-
-### CLI Setup
-
-- **Terminal Emulator**: kitty
-- **Shell**: Zsh (z-shell)
-- **Terminal Prompt**: Starship / Oh My Posh
-- **History Manager**: Atuin
-- **Search Utility**: Fzf (Fuzzy Finder)
-- **Terminal Multiplexer**: tmux
-- **Trash Control**: trashy
-- **Fetch Utilities**: nitch, fastfetch, cutefetch
-- **Zip Management**: unzip
-- **Clipboard Management**: cliphist, wl-clipboard
-
-### TUI Setup
-
-- **Git Management**: gitui, lazygit
-- **Code Editors**: Neovim, Nano, Vim
-- **Task Manager**: btop
-- **File Manager**: yazi
-- **Kubernetes**: k9s
-- **Docker**: lazydocker
-
----
-
-### CLI Alternatives
-
-- **cd**: zoxide
-- **ls**: eza / exa
-- **cat**: bat
-- **man**: tldr
-
----
-
-### System Management
-
-- **Network Management**: NetworkManager (nmcli), iwd (iNet Wireless Daemon)
-- **Bluetooth Management**: Bluez, Bluez-utils
-- **Audio Management**: pamixer, PulseAudio
-- **Brightness Control**: brightnessctl
-- **Power Management**: acpi
-- **Media Player Control**: playerctl
-
----
+```sh
+sudo bash ./setup.sh
+```
