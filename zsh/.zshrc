@@ -10,6 +10,9 @@ fi
 
 source "${ZINIT_HOME}/zinit.zsh"
 
+zinit ice lucid as"program" pick"bin/git-dsf"
+zinit load so-fancy/diff-so-fancy
+
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -177,3 +180,4 @@ complete -o nospace -C /usr/bin/terraform terraform
 complete -C '/usr/bin/aws_completer' aws
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
