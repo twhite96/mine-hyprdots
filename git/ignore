@@ -6,11 +6,46 @@ __pycache__/
 .ruff_cache/
 .ropeproject/
 
-# Rust specific
-target/
-
+# Node.js / JavaScript
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+.cache/
+.next/
+out/
+.vscode/
 
-# Zig specific
-.zig-cache/
-zig-out/
+# Golang
+bin/
+obj/
+vendor/
+*.exe
+*.test
+*.out
+coverage.out
+
+# Go modules cache (optional if you vendor deps)
+go.sum
+go.mod
+
+# Terraform
+*.tfstate
+*.tfstate.*
+*.backup
+.terraform/
+.crash/
+terraform.tfvars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# General
+.DS_Store
+.env
+.env.*
+*.log
