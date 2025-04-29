@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -euo pipefail
+
+
+sudo pacman -S hyprland waybar dunst kitty neovim git wl-clipboard xdg-desktop-portal-hyprland xdg-desktop-portal wofi network-manager-applet brightnessctl pavucontrol tmux rofi yazi firefox pamixer hyprlock grim slurp  
 
 cat << EOF | lolcat
   _________       __   ____ ___         
@@ -11,10 +15,16 @@ cat << EOF | lolcat
 
 EOF
 
+
 echo "Copying config files..."
 cp -r cava kitty dunst fastfetch gtk-3.0 gtk-4.0 hypr hypridle rofi starship tmux waybar yazi ~/.config/
 
 cd ~/.config/waybar/scripts
+chmod +x *
+
+cd ~/hyprdots
+
+cd ~/.config/rofi
 chmod +x *
 
 cd ~/hyprdots
