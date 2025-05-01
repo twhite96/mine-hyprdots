@@ -181,3 +181,9 @@ complete -C '/usr/bin/aws_completer' aws
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+fortune | cowsay
+
+# Todo Manager Alias
+alias todo='~/.todo/todo_tui.sh'
+alias todocli='~/.todo/todo_cli.sh'
