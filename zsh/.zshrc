@@ -1,4 +1,6 @@
 export ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+#export PATH="$HOME/.local/bin:$PATH"
+export PATH=$PATH:/opt/kafka/bin
 export PATH=$HOME/.config/rofi/scripts:$PATH
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export EDITOR=/bin/nvim
@@ -182,7 +184,7 @@ complete -C '/usr/bin/aws_completer' aws
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
-fortune | cowsay
+#fortune | cowsay
 
 # Todo Manager Alias
 alias todo='~/.todo/todo_tui.sh'

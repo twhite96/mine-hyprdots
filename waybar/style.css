@@ -153,6 +153,11 @@ menu,
   margin: 0 1px;
 }
 
+#custom-volume {
+  padding: 0 8px;
+  /* color: @beige; */
+}
+
 #network.speed {
   background: @raisin-black;
   padding: 0px 6px;

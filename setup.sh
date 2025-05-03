@@ -3,7 +3,7 @@
 set -euo pipefail
 
 
-sudo pacman -S hyprland waybar dunst kitty neovim git wl-clipboard xdg-desktop-portal-hyprland xdg-desktop-portal wofi network-manager-applet brightnessctl pavucontrol tmux rofi yazi firefox pamixer hyprlock grim slurp  
+#sudo pacman -S hyprland waybar dunst kitty neovim git wl-clipboard xdg-desktop-portal-hyprland xdg-desktop-portal wofi network-manager-applet brightnessctl pavucontrol tmux rofi yazi firefox pamixer hyprlock grim slurp  
 
 cat << EOF | lolcat
   _________       __   ____ ___         
@@ -78,6 +78,6 @@ else
     echo "JetBrains Nerd Fonts already installed, skipping download."
 fi
 
-fc-cache -fv
+fc-cache -f -v
 
 echo "Setup completed successfully!"
