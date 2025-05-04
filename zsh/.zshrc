@@ -92,6 +92,14 @@ alias vim='nvim'
 
 alias gh-create='gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
 
+add(){
+  git add --patch
+}
+
+commit(){
+  bash ~/SideProjects/dotsh/gh/commit.sh
+}
+
 alias kls='kubectl get all'
 
 alias jump='nvim $(fzf -m --preview="bat --color=always {}")'
