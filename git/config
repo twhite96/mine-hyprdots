@@ -41,7 +41,7 @@
     old = red
 
 [interactive]
-    # diffFilter = diff-so-fancy --patch
+    diffFilter = diff-so-fancy --patch
     singleKey = true
 
 [commit]
