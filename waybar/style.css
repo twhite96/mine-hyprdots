@@ -12,6 +12,20 @@
   text-shadow: none;
   background-color: transparent;
 }
+window#waybar {
+  /* background: rgba(0, 0, 0, 0.45); */
+  /* color: @text; */
+  border-radius: 6px;
+  padding: 2px;
+  box-shadow: none;
+}
+
+#window {
+  color: @text;
+  background: @raisin-black;
+  padding: 6px;
+  margin: 0px 2px;
+}
 
 #custom-cava {
   color: #cba6f7;
@@ -122,9 +136,10 @@ menu,
   font-size: 18px;
   background: @raisin-black;
   color: #94e2d5;
-  padding: 0px 14px;
-  /* margin-right: 2px; */
-  border-radius: 6px 0 0 6px;
+  padding: 0px 10px;
+  margin-right: 2px;
+  border-radius: 6px;
+  /* border-radius: 6px 0 0 6px; */
   /* border-radius: 0 6px 6px 0; */
 }
 
@@ -135,7 +150,8 @@ menu,
   margin-right: 1px;
   color: #f38ba8;
   background: @raisin-black;
-  border-radius: 0 6px 6px 0;
+  /* border-radius: 0 6px 6px 0; */
+  border-radius: 6px;
 }
 
 #pulseaudio,

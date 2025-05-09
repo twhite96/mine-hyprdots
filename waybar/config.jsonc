@@ -7,7 +7,8 @@
   "modules-left": ["hyprland/workspaces", "cpu", "memory", "network#speed"],
   "modules-center": ["clock"],
   "modules-right": [
-    "custom/cava",
+    // "custom/cava",
+    "hyprland/window",
     "temperature#gpu",
     "custom/transparency",
     "custom/wallpaper",
@@ -18,7 +19,23 @@
     "battery"
   ],
   "hyprland/window": {
-    "format": "󰣇 {}"
+    "format": "{initialClass}",
+    "icon": true,
+    "icon-size": 19,
+    "seperate-outputs": true,
+    "rewrite": {
+      "": "  Arch",
+      "Mozilla Firefox": "Firefox",
+      "(.*) Thunar": "Thunar",
+      "(.*)obs(.*)": "OBS",
+      "Spotify (.*)": "Spotify",
+      "discord(.*)": " Discord",
+      "Code": "VS Code",
+      "Docker Desktop": "Docker",
+      "kitty": "Kitty",
+      "zen-alpha": "Zen"
+    },
+    "on-click-middle": "pkill waybar && hyprctl dispatch exec waybar"
   },
   "custom/cava": {
     "format": "{}",
@@ -77,15 +94,33 @@
     "on-click": "kitty btop",
     "tooltip-format": "{used}/{total} GiB"
   },
+  // "hyprland/workspaces": {
+  //   "all-outputs": true,
+  //   "warp-on-scroll": true,
+  //   "enable-bar-scroll": true,
+  //   "disable-scroll-wraparound": false,
+  //   "format": " {icon} ",
+  //   "format-icons": {
+  //     "active": "●",
+  //     "default": "○"
+  //   },
+  //   "persistent-workspaces": {
+  //     "*": 3
+  //   },
+  //   "on-click": "activate",
+  //   "on-scroll-up": "hyprctl dispatch workspace e-1",
+  //   "on-scroll-down": "hyprctl dispatch workspace e+1"
+  // },
   "hyprland/workspaces": {
     "all-outputs": true,
-    "warp-on-scroll": true,
-    "enable-bar-scroll": true,
-    "disable-scroll-wraparound": false,
-    "format": " {icon} ",
+    "active-only": false,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format": "{icon}",
     "format-icons": {
-      "active": "●",
-      "default": "○"
+      "active": "󰮯",
+      "default": "󰊠",
+      "special": "S"
     },
     "persistent-workspaces": {
       "*": 3
