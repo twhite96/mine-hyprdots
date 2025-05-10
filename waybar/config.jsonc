@@ -31,7 +31,7 @@
       "Spotify (.*)": "Spotify",
       "discord(.*)": " Discord",
       "Code": "VS Code",
-      "Docker Desktop": "Docker",
+      "Docker Desktop": " Docker",
       "kitty": "Kitty",
       "zen-alpha": "Zen"
     },
