@@ -100,6 +100,14 @@ commit(){
   bash ~/SideProjects/dotsh/gh/commit.sh
 }
 
+push(){
+  git push
+}
+
+ms(){
+  touch "$1" && chmod +x "$1"
+}
+
 alias kls='kubectl get all'
 
 alias jump='nvim $(fzf -m --preview="bat --color=always {}")'
