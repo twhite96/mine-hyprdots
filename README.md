@@ -57,7 +57,7 @@
 
 [Wallpaper](https://drive.google.com/drive/folders/1Eog40yvrTshjDLVIETVncBKcDsvPLMIX?usp=sharing)
 
-# Quick Installation
+<!-- # Quick Installation
 
 1. Clone this repo to your `~` or `/home/username`path
 
@@ -75,4 +75,4 @@ cd ~/hyprdots
 
 ```sh
 sudo bash ./setup.sh
-```
+``` -->
