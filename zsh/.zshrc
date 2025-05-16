@@ -205,3 +205,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Todo Manager Alias
 alias todo='~/.todo/todo_tui.sh'
 alias todocli='~/.todo/todo_cli.sh'
+
+fastfetch

@@ -96,8 +96,6 @@ menu,
   margin: 3px;
   border-radius: 6px;
   border: none;
-  color: #f5e0dc;
-  /* background-color: #1e1e2e; */
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
 }
@@ -116,6 +114,19 @@ menu,
   animation: none;
 }
 
+#workspaces button:not(.active){
+  color : #74c7ec;
+}
+
+#workspaces button:nth-child(1):not(.active) {
+  color:#f38ba8;
+}
+#workspaces button:nth-child(2):not(.active) {
+  color: #f9e2af;
+}
+#workspaces button:nth-child(3):not(.active) {
+  color: #a6e3a1;
+}
 #clock {
   padding: 0 15px;
   color: @beige;
