@@ -10,6 +10,7 @@
     // "custom/cava",
     "hyprland/window",
     "temperature#gpu",
+    // "custom/update" ,
     "custom/transparency",
     "custom/wallpaper",
     "pulseaudio",
@@ -41,6 +42,11 @@
     "format": "{}",
     "exec": "~/.config/waybar/scripts/cava.sh",
     "on-click": "kitty cava"
+  },
+  "custom/update": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/check-updates.sh"
+    // "on-click": "kitty cava"
   },
   "temperature#gpu": {
     "thermal-zone": 5,
