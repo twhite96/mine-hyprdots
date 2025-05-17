@@ -56,23 +56,55 @@
 ## Wallpaper
 
 [Wallpaper](https://drive.google.com/drive/folders/1Eog40yvrTshjDLVIETVncBKcDsvPLMIX?usp=sharing)
+Here’s an improved version of your README **"Quick Installation"** section, with clearer language, formatting, and professionalism while keeping your unique style:
 
-<!-- # Quick Installation
+---
 
-1. Clone this repo to your `~` or `/home/username`path
+## 🚀 Quick Installation Guide
 
-```sh
-git clone https://github.com/ad1822/hyprdots
-```
+### 📦 Programs Included
 
-2. Navigate to it
+- **Window Manager**: Hyprland (Tiling)
+- **Status Bar**: Waybar
+- **Notification Manager**: Dunst
+- **Browser**: Zen
+- **Color Picker**: hyprpicker
+- **Wallpaper Utility**: hyprpaper
+- **Screenshot Utility**: grim + slurp
+- **App Launcher**: Rofi
+- **Terminal Emulator**: kitty
+- **Shell**: Zsh
+- **Media Controls**: playerctl
+- **Power Management**: acpi
+- **Brightness Control**: brightnessctl
+- **Audio Management**: pamixer, PulseAudio
+- **Network Management**: NetworkManager (nmcli), iwd (iNet Wireless Daemon)
 
-```sh
-cd ~/hyprdots
-```
+> ℹ️ **For more detailed guidance**, check out [this](./Resources.md)
 
-3. Run this installer
+---
 
-```sh
-sudo bash ./setup.sh
-``` -->
+## 🛠️ Installation Steps
+
+1. **Clone the repository** to your home directory like `~` or `/home/username` :
+
+   ```sh
+   git clone https://github.com/ad1822/hyprdots ~/hyprdots
+   ```
+
+2. **Navigate to the cloned directory**:
+
+   ```sh
+   cd ~/hyprdots
+   ```
+
+3. **Run the setup script**:
+
+   ```sh
+   sudo bash ./setup.sh
+   ```
+
+4. **GTK Theme Setup**:
+   I use [`ngw-look`](https://github.com/nwg-piotr/nwg-look) to configure GTK themes and styles. Make sure it's installed and configured as part of your post-install customization.
+
+---

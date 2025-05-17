@@ -151,7 +151,7 @@
     "format": "\uf03e",
     "on-click": "~/.config/waybar/scripts/change-wallpaper.sh && hyprpaper",
     "tooltip": false,
-    "on-click-right": "kitty -e ~/SideProjects/dotsh/mics/select-wallpaper.sh"
+    "on-click-right": "kitty -e ~/.config/waybar/scripts/select-wallpaper.sh"
   },
   "network": {
     "format-wifi": " {icon}",

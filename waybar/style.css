@@ -114,12 +114,12 @@ menu,
   animation: none;
 }
 
-#workspaces button:not(.active){
-  color : #74c7ec;
+#workspaces button:not(.active) {
+  color: #74c7ec;
 }
 
 #workspaces button:nth-child(1):not(.active) {
-  color:#f38ba8;
+  color: #f38ba8;
 }
 #workspaces button:nth-child(2):not(.active) {
   color: #f9e2af;

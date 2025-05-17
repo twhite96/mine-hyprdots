@@ -5,7 +5,7 @@ set -euo pipefail
 
 #sudo pacman -S hyprland waybar dunst kitty neovim git wl-clipboard xdg-desktop-portal-hyprland xdg-desktop-portal wofi network-manager-applet brightnessctl pavucontrol tmux rofi yazi firefox pamixer hyprlock grim slurp  
 
-cat << EOF | lolcat
+cat << EOF 
   _________       __   ____ ___         
  /   _____/ _____/  |_|    |   \______  
  \_____  \_/ __ \   __\    |   /\____ \ 
@@ -39,11 +39,11 @@ cd ~/hyprdots/
 echo "Copying .zshrc..."
 cp zsh/.zshrc ~/.zshrc
 
-echo "Cloning dotsh repo..."
-mkdir -p ~/SideProjects/
-git clone https://github.com/ad1822/dotsh ~/SideProjects/dotsh
+#echo "Cloning dotsh repo..."
+#mkdir -p ~/SideProjects/
+#git clone https://github.com/ad1822/dotsh ~/SideProjects/dotsh
 
-cd ~/SideProjects/dotsh || exit
+#cd ~/SideProjects/dotsh || exit
 
 echo "Making scripts executable..."
 chmod +x *
