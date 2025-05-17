@@ -108,3 +108,17 @@ Here’s an improved version of your README **"Quick Installation"** section, wi
    I use [`ngw-look`](https://github.com/nwg-piotr/nwg-look) to configure GTK themes and styles. Make sure it's installed and configured as part of your post-install customization.
 
 ---
+
+## ⚠️ Important Notice (Read Before Running Setup)
+
+> ### **Warning:**
+>
+> This setup script will **move your existing config files** (e.g., for Waybar, Kitty, Hyprland, etc.) to a backup folder at `~/.config_backup`. Then, it will copy the new configs from this repo into your `~/.config` directory.
+>
+> ### What this means:
+>
+> - Your current setup will be **replaced**.
+> - If you have customizations you care about, **back them up manually** or review the script before running.
+> - Fonts and themes will be installed system-wide in your `~/.local/share/fonts` directory.
+
+---

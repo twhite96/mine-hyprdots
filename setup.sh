@@ -3,81 +3,86 @@
 set -euo pipefail
 
 
-#sudo pacman -S hyprland waybar dunst kitty neovim git wl-clipboard xdg-desktop-portal-hyprland xdg-desktop-portal wofi network-manager-applet brightnessctl pavucontrol tmux rofi yazi firefox pamixer hyprlock grim slurp  
+#sudo pacman -S hyprland waybar dunst kitty neovim git wl-clipboard xdg-desktop-portal-hyprland xdg-desktop-portal wofi network-manager-applet brightnessctl pavucontrol tmux rofi yazi firefox pamixer hyprlock grim slurp
 
-cat << EOF 
-  _________       __   ____ ___         
- /   _____/ _____/  |_|    |   \______  
- \_____  \_/ __ \   __\    |   /\____ \ 
+cat << EOF
+  _________       __   ____ ___
+ /   _____/ _____/  |_|    |   \______
+ \_____  \_/ __ \   __\    |   /\____ \
  /        \  ___/|  | |    |  / |  |_> >
-/_______  /\___  >__| |______/  |   __/ 
-        \/     \/               |__|    
+/_______  /\___  >__| |______/  |   __/
+        \/     \/               |__|
 
 EOF
 
 
-echo "Copying config files..."
-cp -r cava kitty dunst fastfetch gtk-3.0 gtk-4.0 hypr hypridle rofi starship tmux waybar yazi ~/.config/
+CONFIGS="cava kitty dunst fastfetch hypr hypridle rofi starship tmux waybar yazi"
+BACKUP_DIR="$HOME/.config_backup"
+LOCAL_BIN="$HOME/.local/bin"
+FONT_DIR="$HOME/.local/share/fonts"
+DOTS_DIR="$HOME/hyprdots"
 
-cd ~/.config/waybar/scripts
-chmod +x *
+echo "==> Backing up existing config files..."
+mkdir -p "$BACKUP_DIR"
+for dir in $CONFIGS; do
+    if [ -d "$HOME/.config/$dir" ]; then
+        echo "=> Backing up $dir to $BACKUP_DIR"
+        mv "$HOME/.config/$dir" "$BACKUP_DIR/$dir"
+    fi
+done
 
-cd ~/hyprdots
+echo "==> Copying new config files..."
+cp -r $CONFIGS "$HOME/.config/"
 
-cd ~/.config/rofi
-chmod +x *
+echo "==> Making Waybar and Rofi scripts executable..."
+chmod +x ~/.config/waybar/scripts/*
+chmod +x ~/.config/rofi/* || true
 
-cd ~/hyprdots
+echo "==> Copying binaries..."
+mkdir -p "$LOCAL_BIN"
+cp -r bin/* "$LOCAL_BIN"
+chmod +x "$LOCAL_BIN"/*
 
-cp -r bin ~/.local/bin/
+echo "==> Copying .zshrc..."
+cp zsh/.zshrc "$HOME/.zshrc"
 
-cd ~/.local/bin/
-chmod +x *
+echo "==> Making scripts executable..."
+chmod +x "$DOTS_DIR"/* || true
 
-cd ~/hyprdots/
+# Font Awesome Installation
+FA_DIR="$FONT_DIR/fontawesome"
+mkdir -p "$FA_DIR"
 
-echo "Copying .zshrc..."
-cp zsh/.zshrc ~/.zshrc
-
-#echo "Cloning dotsh repo..."
-#mkdir -p ~/SideProjects/
-#git clone https://github.com/ad1822/dotsh ~/SideProjects/dotsh
-
-#cd ~/SideProjects/dotsh || exit
-
-echo "Making scripts executable..."
-chmod +x *
-
-echo "Setup complete!"
-
-mkdir -p ~/.local/share/fonts/fontawesome
-
-echo "Installing Font Awesome Icon pack (Version 5 and 6)"
-if [[ ! -f ~/.local/share/fonts/fontawesome/fa-brands-400.ttf ]]; then
+echo "==> Installing Font Awesome (v5 & v6)..."
+if [[ ! -f "$FA_DIR/fa-brands-400.ttf" ]]; then
     wget -q https://use.fontawesome.com/releases/v6.7.2/fontawesome-free-6.7.2-desktop.zip
-    unzip fontawesome-free-6.7.2-desktop.zip -d ~/.local/share/fonts/fontawesome
-    mv fontawesome6/otfs/*.otf ~/.local/share/fonts/fontawesome/
-    rm -rf fontawesome6 fontawesome-free-6.7.2-desktop.zip
-
+    unzip -q fontawesome-free-6.7.2-desktop.zip
+    mv fontawesome-free-6.7.2-desktop/otfs/*.otf "$FA_DIR/"
+    rm -rf fontawesome-free-6.7.2-desktop*
+    
     wget -q https://use.fontawesome.com/releases/v5.15.4/fontawesome-free-5.15.4-desktop.zip
-    unzip fontawesome-free-5.15.4-desktop.zip -d ~/.local/share/fonts/fontawesome
-    mv fontawesome5/otfs/*.otf ~/.local/share/fonts/fontawesome/
-    rm -rf fontawesome5 fontawesome-free-5.15.4-desktop.zip
+    unzip -q fontawesome-free-5.15.4-desktop.zip
+    mv fontawesome-free-5.15.4-desktop/otfs/*.otf "$FA_DIR/"
+    rm -rf fontawesome-free-5.15.4-desktop*
 else
-    echo "Font Awesome already installed, skipping download."
+    echo "✔️ Font Awesome already installed, skipping."
 fi
 
-echo "Installing JetBrains Nerd Fonts"
-mkdir -p ~/.local/share/fonts/JetBrainsMono
-if [[ ! -f ~/.local/share/fonts/JetBrainsMono/JetBrainsMono-Regular.ttf ]]; then
+# JetBrains Nerd Font Installation
+JB_FONT_DIR="$FONT_DIR/JetBrainsMono"
+mkdir -p "$JB_FONT_DIR"
+
+echo "==> Installing JetBrains Nerd Fonts..."
+if [[ ! -f "$JB_FONT_DIR/JetBrainsMono-Regular.ttf" ]]; then
     wget -q https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip
     unzip -q JetBrainsMono.zip -d JetBrainsMono
-    mv JetBrainsMono/*.ttf ~/.local/share/fonts/JetBrainsMono/
+    mv JetBrainsMono/*.ttf "$JB_FONT_DIR/"
     rm -rf JetBrainsMono JetBrainsMono.zip
 else
-    echo "JetBrains Nerd Fonts already installed, skipping download."
+    echo "✔️ JetBrains Nerd Font already installed, skipping."
 fi
 
+echo "==> Refreshing font cache..."
 fc-cache -f -v
 
-echo "Setup completed successfully!"
+echo -e "\n✅ Setup completed successfully!"
