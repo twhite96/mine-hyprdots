@@ -105,7 +105,10 @@ Here’s an improved version of your README **"Quick Installation"** section, wi
    ```
 
 4. **GTK Theme Setup**:
-   I use [`ngw-look`](https://github.com/nwg-piotr/nwg-look) to configure GTK themes and styles. Make sure it's installed and configured as part of your post-install customization.
+
+- [Catppuccin Gtk theme](https://github.com/catppuccin/gtk/releases)
+
+- I use [`ngw-look`](https://github.com/nwg-piotr/nwg-look) to configure GTK themes and styles.
 
 ---
 
