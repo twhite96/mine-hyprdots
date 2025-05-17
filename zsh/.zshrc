@@ -97,7 +97,7 @@ add(){
 }
 
 commit(){
-  bash ~/SideQuests/dotsh/gh/commit
+  bash ~/SideProjects/dotsh/gh/commit.sh
 }
 
 push(){
