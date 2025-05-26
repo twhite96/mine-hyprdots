@@ -97,7 +97,7 @@ add(){
 }
 
 commit(){
-  bash ~/SideProjects/dotsh/gh/commit.sh
+  bash ~/SideQuests/dotsh/gh/commit
 }
 
 push(){
@@ -193,6 +193,10 @@ c() {
     cd "$1" && ls
 }
 
+music() {
+  xdg-open https://music.youtube.com/
+}
+
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
 complete -C '/usr/bin/aws_completer' aws
@@ -206,4 +210,3 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias todo='~/.todo/todo_tui.sh'
 alias todocli='~/.todo/todo_cli.sh'
 
-fastfetch

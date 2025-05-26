@@ -34,7 +34,7 @@
       "Code": "VS Code",
       "Docker Desktop": " Docker",
       "kitty": "Kitty",
-      "zen-alpha": "Zen"
+      "app.zen_browser.zen": "Zen"
     },
     "on-click-middle": "pkill waybar && hyprctl dispatch exec waybar"
   },
