@@ -1,98 +1,78 @@
-// Inspired by Catnap
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "type": "small",
     "padding": {
-      "top": 2,
-      "right": 2
+      "top": 1,
+      "bottom": 1,
+      "left": 5,
+      "right": 5
     }
+    // "source": "~/.config/fastfetch/icons/arch.txt"
   },
   "display": {
-    "separator": " ",
-    "key": {
-      "width": 16
-    }
+    "separator": "  "
   },
   "modules": [
     {
-      "key": "╭───────────╮",
-      "type": "custom"
+      "type": "os",
+      "key": " ",
+      "keyColor": "blue"
     },
     {
-      // draw borders first to make colors of left and right border consistant
-      "key": "│           │\u001b[11D{#31} user",
-      "type": "title",
-      "format": "{1}"
+      "type": "users",
+      "key": " ",
+      "keyColor": "blue"
     },
     {
-      "key": "├───────────┤",
-      "type": "custom"
-    },
-    // {
-    //     "key": "│           │\u001b[11D{#32}󰇅 hname",
-    //     "type": "title",
-    //     "format": "{2}"
-    // },
-    // {
-    //     "key": "│           │\u001b[11D{#33}󰅐 uptime",
-    //     "type": "uptime"
-    // },
-    {
-      "key": "│           │\u001b[11D{#34}󰟾 distro",
-      "type": "os"
+      "type": "kernel",
+      "key": " ",
+      "keyColor": "black"
     },
     {
-      "key": "│           │\u001b[11D{#35} kernel",
-      "type": "kernel"
+      "type": "packages",
+      "key": " ",
+      "keyColor": "cyan"
     },
     {
-      "key": "│           │\u001b[11D{#36}󰇄 desktop",
-      "type": "de"
-    },
-    {
-      "key": "│           │\u001b[11D{#31} term",
-      "type": "terminal"
-    },
-    {
-      "key": "│           │\u001b[11D{#31} wm",
-      "type": "wm"
-    },
-    {
-      "key": "│           │\u001b[11D{#32} shell",
-      "type": "shell"
+      "type": "shell",
+      "key": " ",
+      "keyColor": "dim_"
     },
     // {
-    //     "key": "│           │\u001b[11D{#33}󰍛 cpu",
-    //     "type": "cpu",
-    //     "showPeCoreCount": true
+    //   "type": "terminal",
+    //   "key": " ",
+    //   "keyColor": "green"
     // },
     {
-      "key": "│           │\u001b[11D{#34}󰉉 disk",
-      "type": "disk",
-      "folders": "/"
+      "type": "wm",
+      "key": " ",
+      "keyColor": "red"
+    },
+    // {
+    //   "type": "uptime",
+    //   "key": " ",
+    //   "keyColor": "cyan"
+    // },
+    {
+      "type": "cpu",
+      "key": " ",
+      "keyColor": "blue"
+    },
+    // {
+    //   "type": "btrfs",
+    //   "key": " ",
+    //   "keyColor": "red"
+    // },
+    {
+      "type": "gpu",
+      "key": " ",
+      "keyColor": "green"
     },
     {
-      "key": "│           │\u001b[11D{#35} memory",
-      "type": "memory"
-    },
-    {
-      "key": "│           │\u001b[11D{#36}󰩟 network",
-      "type": "localip",
-      "format": "{1} ({4})"
-    },
-    {
-      "key": "├───────────┤",
-      "type": "custom"
-    },
-    {
-      "key": "│           │\u001b[11D{#39} colors",
-      "type": "colors",
-      "symbol": "circle"
-    },
-    {
-      "key": "╰───────────╯",
-      "type": "custom"
+      "type": "memory",
+      "key": "󰍛 ",
+      "keyColor": "yellow"
     }
   ]
 }

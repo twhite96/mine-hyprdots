@@ -97,7 +97,7 @@ add(){
 }
 
 commit(){
-  bash ~/SideQuests/dotsh/gh/commit
+  bash ~/work/main/dotsh/gh/commit
 }
 
 push(){
@@ -210,3 +210,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias todo='~/.todo/todo_tui.sh'
 alias todocli='~/.todo/todo_cli.sh'
 
+fastfetch
