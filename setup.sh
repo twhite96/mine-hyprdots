@@ -83,15 +83,71 @@ fi
 echo "==> Refreshing font cache..."
 fc-cache -f -v
 
-echo -e "\n✅ Setup completed successfully!"
+echo -e "\n✅ Base setup completed successfully!"
 
-echo "==> Installing AUR package manager"
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si
-
-echo "==> Installing some useful packages"
-yay -S pacseek
-sudo pacman -S dunst libnotify waybar wl-clipboard xdg-desktop-portal-hyprland xdg-desktop-portal brightnessctl pavucontrol tmux slurp grim hyprlock pamixer
-
-
-echo "==> Wallpaper Dir"
+# Create wallpaper directory
+echo "==> Creating wallpaper directory..."
 mkdir -p ~/Pictures/Wallpaper
+
+# Install yay if not already installed
+if ! command -v yay &>/dev/null; then
+    echo "==> Installing AUR package manager (yay)..."
+    sudo pacman -S --needed git base-devel || { echo "❌ Failed to install base-devel"; exit 1; }
+    git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si || { echo "❌ yay installation failed"; exit 1; }
+    cd ~
+else
+    echo "✔️ yay is already installed."
+fi
+
+# Install useful packages from pacman and AUR
+echo "==> Installing core packages..."
+yay -S --noconfirm \
+pacseek \
+zoxide \
+fzf \
+unzip \
+zsh \
+starship \
+atuin \
+eza \
+acpi \
+playerctl \
+zsh-autosuggestions \
+zsh-syntax-highlighting \
+zsh-history-substring-search
+
+sudo pacman -S --noconfirm \
+dunst \
+libnotify \
+waybar \
+wl-clipboard \
+xdg-desktop-portal-hyprland \
+xdg-desktop-portal \
+brightnessctl \
+pavucontrol \
+tmux \
+slurp \
+grim \
+hyprlock \
+pamixer
+
+# Set zsh as default shell if not already
+if [[ "$SHELL" != "$(which zsh)" ]]; then
+    echo "==> Changing default shell to zsh..."
+    chsh -s "$(which zsh)"
+fi
+
+# Ensure Zsh plugins and tools are sourced in .zshrc
+ZSHRC="$HOME/.zshrc"
+echo "==> Configuring Zsh plugins and tools..."
+{
+    echo -e "\n# Zsh Plugins and Tools"
+    echo "source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    echo "source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    echo "source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
+    echo 'eval "$(zoxide init zsh)"'
+    echo 'eval "$(atuin init zsh)"'
+    echo 'eval "$(starship init zsh)"'
+} >> "$ZSHRC"
+
+echo -e "\n✅ All packages and Zsh plugins configured successfully!"
