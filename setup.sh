@@ -2,21 +2,18 @@
 
 set -euo pipefail
 
-
-#sudo pacman -S hyprland waybar dunst kitty neovim git wl-clipboard xdg-desktop-portal-hyprland xdg-desktop-portal wofi network-manager-applet brightnessctl pavucontrol tmux rofi yazi firefox pamixer hyprlock grim slurp
-
 cat << EOF
   _________       __   ____ ___
  /   _____/ _____/  |_|    |   \______
  \_____  \_/ __ \   __\    |   /\____ \
- /        \  ___/|  | |    |  / |  |_> >
+ /        \  ___/|  | |    |  / |  |_> >>>>
 /_______  /\___  >__| |______/  |   __/
         \/     \/               |__|
 
 EOF
 
 
-CONFIGS="cava kitty dunst fastfetch hypr hypridle rofi starship tmux waybar yazi"
+CONFIGS="cava kitty dunst fastfetch pacseek hypr hypridle rofi starship tmux waybar yazi"
 BACKUP_DIR="$HOME/.config_backup"
 LOCAL_BIN="$HOME/.local/bin"
 FONT_DIR="$HOME/.local/share/fonts"
@@ -27,7 +24,8 @@ mkdir -p "$BACKUP_DIR"
 for dir in $CONFIGS; do
     if [ -d "$HOME/.config/$dir" ]; then
         echo "=> Backing up $dir to $BACKUP_DIR"
-        mv "$HOME/.config/$dir" "$BACKUP_DIR/$dir"
+        cp -r "$HOME/.config/$dir" "$BACKUP_DIR/$dir"
+        rm -rf "$HOME/.config/$dir"
     fi
 done
 
@@ -86,3 +84,14 @@ echo "==> Refreshing font cache..."
 fc-cache -f -v
 
 echo -e "\n✅ Setup completed successfully!"
+
+echo "==> Installing AUR package manager"
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git ~/yay && cd ~/yay && makepkg -si
+
+echo "==> Installing some useful packages"
+yay -S pacseek
+sudo pacman -S dunst libnotify waybar wl-clipboard xdg-desktop-portal-hyprland xdg-desktop-portal brightnessctl pavucontrol tmux slurp grim hyprlock pamixer
+
+
+echo "==> Wallpaper Dir"
+mkdir -p ~/Pictures/Wallpaper

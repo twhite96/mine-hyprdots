@@ -85,3 +85,19 @@
 - **Media Player Control**: playerctl
 
 ---
+
+### TUIs I use most
+
+- **pacseek**
+- **gping**
+- **kmon**
+- **lazydocker**
+- **lazygit**
+- **gitui**
+- **btop**
+- **k9s**
+- **kaskade** - kafka
+- **nvtop** - for Nvidia and AMD process monitoring
+- **process-compose** - For Running processes and softwares
+- **puffin** - For finance
+- **tdash** - For github, and CI CD
