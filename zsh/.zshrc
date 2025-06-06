@@ -93,19 +93,19 @@ alias vim='nvim'
 alias gh-create='gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
 
 add(){
-  git add --patch
+    git add --patch
 }
 
 commit(){
-  bash ~/work/main/dotsh/gh/commit
+    bash ~/work/main/dotsh/gh/commit
 }
 
 push(){
-  git push
+    git push
 }
 
 ms(){
-  touch "$1" && chmod +x "$1"
+    touch "$1" && chmod +x "$1"
 }
 
 alias kls='kubectl get all'
@@ -194,7 +194,7 @@ c() {
 }
 
 music() {
-  xdg-open https://music.youtube.com/
+    xdg-open https://music.youtube.com/
 }
 
 autoload -U +X bashcompinit && bashcompinit
@@ -210,4 +210,13 @@ export PATH="$HOME/.cargo/bin:$PATH"
 alias todo='~/.todo/todo_tui.sh'
 alias todocli='~/.todo/todo_cli.sh'
 
-fastfetch
+# fastfetch
+
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    if tmux has-session -t default 2>/dev/null; then
+        tmux new-window -t default
+        tmux attach-session -t default
+    else
+        tmux new-session -s default
+    fi
+fi
