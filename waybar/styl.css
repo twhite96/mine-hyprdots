@@ -2,9 +2,8 @@
 
 * {
   font-family: JetBrains Mono Nerd Font;
-  min-height: 14px;
+  min-height: 12px;
   font-size: 12px;
-  border: none;
   border-radius: 6px;
   padding: 0;
   margin: 0;
@@ -12,22 +11,9 @@
   text-shadow: none;
   background-color: transparent;
 }
-
-#custom-gh {
-  color: #39d353; /* Default color for contributions */
-  background: @raisin-black;
-  border-radius: 6px;
-  margin-right: 2px;
-  padding: 6px;
-}
-
-#custom-gh .empty {
-  color: #161b22; /* Color for no contributions */
-}
-
 window#waybar {
-  /* background: rgba(0, 0, 0, 0.45); */
-  /* color: @text; */
+  background: rgba(0, 0, 0, 0.65);
+  color: @beige;
   border-radius: 6px;
   padding: 2px;
   box-shadow: none;
@@ -35,7 +21,7 @@ window#waybar {
 
 #window {
   color: @text;
-  background: @raisin-black;
+  /* background: @raisin-black; */
   padding: 6px;
   margin: 0px 2px;
 }
@@ -53,7 +39,7 @@ window#waybar {
 #cpu {
   color: @beige;
   padding: 0px 8px 0px 15px;
-  background: @raisin-black;
+  /* background: @raisin-black; */
   margin-left: 2px;
   border-radius: 6px 0 0 6px;
 }
@@ -61,7 +47,7 @@ window#waybar {
 #memory {
   color: @beige;
   padding: 0px 15px 0px 8px;
-  background: @raisin-black;
+  /* background: @raisin-black; */
   margin-right: 1px;
   border-radius: 0 6px 6px 0;
 }
@@ -70,7 +56,7 @@ window#waybar {
   padding: 0px 12px;
   margin-right: 2px;
   color: @celadon;
-  background: @raisin-black;
+  /* background: @raisin-black; */
   border-radius: 6px;
 }
 
@@ -85,14 +71,14 @@ menu,
 #network,
 #battery,
 #custom-power {
-  background: @raisin-black;
+  /* background: @raisin-black; */
   padding: 7px 8px;
   margin: 0;
   border-radius: 6px;
 }
 
 #workspaces {
-  background: @raisin-black;
+  /* background: @raisin-black; */
   margin: 0;
   margin-left: 3px;
   padding: 0;
@@ -151,14 +137,14 @@ menu,
   transition: none;
   padding: 0px 10px;
   margin-right: 2px;
-  background: @raisin-black;
+  /* background: @raisin-black; */
   color: rgba(137, 220, 235, 1);
   border-radius: 0 6px 6px 0;
 }
 
 #custom-transparency {
   font-size: 18px;
-  background: @raisin-black;
+  /* background: @raisin-black; */
   color: #94e2d5;
   padding: 0px 10px;
   margin-right: 2px;
@@ -173,7 +159,7 @@ menu,
   padding: 0px 8px;
   margin-right: 1px;
   color: #f38ba8;
-  background: @raisin-black;
+  /* background: @raisin-black; */
   /* border-radius: 0 6px 6px 0; */
   border-radius: 6px;
 }
@@ -199,7 +185,7 @@ menu,
 }
 
 #network.speed {
-  background: @raisin-black;
+  /* background: @raisin-black; */
   padding: 0px 6px;
   min-width: 10px;
   color: @beige;
@@ -234,31 +220,31 @@ menu,
 
 #battery.charging {
   color: #33ae18; /* Text */
-  background: @raisin-black;
+  /* background: @raisin-black; */
   border-radius: 6px;
 }
 
 #battery.good:not(.charging) {
   color: #f8d589;
-  background: @raisin-black;
+  /* background: @raisin-black; */
   border-radius: 6px;
 }
 
 #battery.warning:not(.charging) {
   color: #e0a858; /* Text */
-  background: @raisin-black;
+  /* background: @raisin-black; */
   border-radius: 6px;
 }
 
 #battery.low:not(.charging) {
   color: #d20f39; /* Text */
-  background: @raisin-black;
+  /* background: @raisin-black; */
   border-radius: 6px;
 }
 
 #battery.critical:not(.charging) {
   color: #d20f39; /* Text */
-  background: @raisin-black;
+  /* background: @raisin-black; */
   animation-name: blink;
   animation-duration: 0.75s;
   animation-timing-function: linear;

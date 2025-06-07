@@ -9,6 +9,7 @@
   "modules-right": [
     // "custom/cava",
     "hyprland/window",
+    "custom/gh",
     "temperature#gpu",
     // "custom/update" ,
     "custom/transparency",
@@ -19,6 +20,12 @@
     // "bluetooth",
     "battery"
   ],
+  "custom/gh": {
+    "exec": "~/.config/waybar/scripts/weekly_commits",
+    "return-type": "json",
+    "interval": 3600, // Update every hour
+    "tooltip": true
+  },
   "hyprland/window": {
     "format": "{initialClass}",
     "icon": true,
