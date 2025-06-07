@@ -18,7 +18,7 @@
   background: @raisin-black;
   border-radius: 6px;
   margin-right: 2px;
-  padding: 6px;
+  padding: 0px 8px;
 }
 
 #custom-gh .empty {

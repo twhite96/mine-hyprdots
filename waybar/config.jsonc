@@ -23,7 +23,7 @@
   "custom/gh": {
     "exec": "~/.config/waybar/scripts/weekly_commits",
     "return-type": "json",
-    "interval": 3600, // Update every hour
+    "interval": 2400,
     "tooltip": true
   },
   "hyprland/window": {

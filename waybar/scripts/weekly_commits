@@ -13,7 +13,7 @@ GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
 GITHUB_PAT = os.getenv("GITHUB_PAT")
 
 today = datetime.date.today()
-start_of_week = today - datetime.timedelta(days=today.weekday())
+start_of_week = today - datetime.timedelta(days=(today.weekday() + 1) % 7)  # Start from Sunday
 from_date = start_of_week.isoformat() + "T00:00:00Z"
 to_date = today.isoformat() + "T23:59:59Z"
 
@@ -47,15 +47,15 @@ headers = {
 }
 
 COLOR_SCHEME = {
-    0: "#ebedf0",   # No contributions (light gray)
-    1: "#9be9a8",   # 1-3 commits (light green)
-    2: "#40c463",   # 4-6 commits (medium green)
-    3: "#30a14e",   # 7-9 commits (dark green)
-    4: "#216e39"    # 10+ commits (darkest green)
+    0: "#ebedf0",   # No contributions
+    1: "#9be9a8",   # 1-3 commits
+    2: "#40c463",   # 4-6 commits
+    3: "#30a14e",   # 7-9 commits
+    4: "#216e39"    # 10+ commits
 }
 
 def get_color(count):
-    """Get GitHub-like color based on contribution count"""
+    """Get color based on commit count"""
     if count == 0:
         return COLOR_SCHEME[0]
     elif 1 <= count <= 3:
@@ -68,8 +68,8 @@ def get_color(count):
         return COLOR_SCHEME[4]
 
 def get_weekday_name(weekday):
-    """Convert weekday number (0-6) to abbreviated name"""
-    return ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"][weekday]
+    """Convert weekday number to name"""
+    return ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][weekday]
 
 try:
     response = requests.post(
@@ -100,14 +100,15 @@ try:
 
     for date, count in contributions.items():
         color = get_color(count)
-        dots.append(f'<span foreground="{color}">●</span>')
+        dots.append(f'<span foreground="{color}">■</span>')
         weekday = get_weekday_name(date.weekday())
-        tooltip_lines.append(f"{weekday}: {count} contribution{'s' if count != 1 else ''}")
+        # Format: "Sun (5/1): 4 commits"
+        tooltip_lines.append(f"{weekday} ({date.day}/{date.month}): {count} contribution{'s' if count != 1 else ''}")
         total_contributions += count
 
     output = {
         "text": " ".join(dots),
-        "tooltip": "\n".join([f"GitHub Contributions ({start_of_week} to {today})",
+        "tooltip": "\n".join([f"GitHub Contributions ({start_of_week.strftime('%d/%m')} to {today.strftime('%d/%m')})",
                              f"Total: {total_contributions}"] + tooltip_lines),
         "class": "github-contributions",
         "alt": "GitHub Contributions"
