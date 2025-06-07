@@ -79,7 +79,7 @@ tooltip,
 menu,
 #workspaces,
 #clock,
-#pulseaudio,
+#wireplumber,
 #backlight,
 #bluetooth,
 #network,
@@ -178,7 +178,7 @@ menu,
   border-radius: 6px;
 }
 
-#pulseaudio,
+#wireplumber,
 #backlight {
   padding: 0 8px;
   margin: 0 1px;

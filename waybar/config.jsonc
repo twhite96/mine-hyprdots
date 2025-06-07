@@ -14,7 +14,7 @@
     // "custom/update" ,
     "custom/transparency",
     "custom/wallpaper",
-    "pulseaudio",
+    "wireplumber",
     "backlight",
     "network",
     // "bluetooth",
@@ -184,36 +184,47 @@
     "tooltip-format": "{capacity}%, about {time} left",
     "format-icons": [" ", " ", " ", " "]
   },
-  "pulseaudio": {
-    "format": "<span font='Font Awesome 5 Free'>{icon}</span>",
-    "format-muted": "<span font='Font Awesome 5 Free'>\uf6a9</span>",
-    "format-icons": {
-      "headphone": "\uf025",
-      // "default": ["\uf028"]
-      // "default": [
-      //   "▁", // 0–16%
-      //   "▂▁", // 17–33%
-      //   "▃▂▁", // 34–50%
-      //   "▄▃▂▁", // 51–66%
-      //   "▅▄▃▂▁", // 67–83%
-      //   "▆▅▄▃▂▁" // 84–100%
-      // ]
-      "default": [
-        "░░░░░░░░░░",
-        "▓░░░░░░░░░",
-        "▓▓░░░░░░░░",
-        "▓▓▓░░░░░░░",
-        "▓▓▓▓░░░░░░",
-        "▓▓▓▓▓░░░░░",
-        "▓▓▓▓▓▓░░░░",
-        "▓▓▓▓▓▓▓░░░",
-        "▓▓▓▓▓▓▓▓░░",
-        "▓▓▓▓▓▓▓▓▓░",
-        "▓▓▓▓▓▓▓▓▓▓"
-      ]
-    },
-    "tooltip-format": "{volume}% {desc}",
-    "on-click": "pamixer -t"
+  // "pulseaudio": {
+  //   "format": "<span font='Font Awesome 5 Free'>{icon}</span>",
+  //   "format-muted": "<span font='Font Awesome 5 Free'>\uf6a9</span>",
+  //   "format-icons": {
+  //     "headphone": "\uf025",
+  //     "default": ["\uf028"]
+  //     // "default": [
+  //     //   "▁", // 0–16%
+  //     //   "▂▁", // 17–33%
+  //     //   "▃▂▁", // 34–50%
+  //     //   "▄▃▂▁", // 51–66%
+  //     //   "▅▄▃▂▁", // 67–83%
+  //     //   "▆▅▄▃▂▁" // 84–100%
+  //     // ]
+  //     // "default": [
+  //     //   "░░░░░░░░░░",
+  //     //   "▓░░░░░░░░░",
+  //     //   "▓▓░░░░░░░░",
+  //     //   "▓▓▓░░░░░░░",
+  //     //   "▓▓▓▓░░░░░░",
+  //     //   "▓▓▓▓▓░░░░░",
+  //     //   "▓▓▓▓▓▓░░░░",
+  //     //   "▓▓▓▓▓▓▓░░░",
+  //     //   "▓▓▓▓▓▓▓▓░░",
+  //     //   "▓▓▓▓▓▓▓▓▓░",
+  //     //   "▓▓▓▓▓▓▓▓▓▓"
+  //     // ]
+  //   },
+  //   "tooltip-format": "{volume}% {desc}",
+  //   "on-click": "pamixer -t"
+  // },
+  "wireplumber": {
+    "max-volume": 200,
+    "scroll-step": 5,
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-icons": [" ", " ", " "],
+    "format-muted": " ",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click": "pamixer -t",
+    "tooltip-format": "{volume}% | {desc}"
   },
   "bluetooth": {
     "format": "{icon}",
