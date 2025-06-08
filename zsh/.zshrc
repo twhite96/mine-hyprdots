@@ -143,6 +143,10 @@ cpcf() {
     fi
 }
 
+mount_gdrive() {
+  rclone mount gdrive: ~/mnt/gdrive 
+}
+
 gh_open() {
     xdg-open "https://github.com/ad1822/$1"
 }
@@ -212,11 +216,11 @@ alias todocli='~/.todo/todo_cli.sh'
 
 # fastfetch
 
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    if tmux has-session -t default 2>/dev/null; then
-        tmux new-window -t default
-        tmux attach-session -t default
-    else
-        tmux new-session -s default
-    fi
-fi
+#if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+#    if tmux has-session -t default 2>/dev/null; then
+#        tmux new-window -t default
+#        tmux attach-session -t default
+#    else
+#        tmux new-session -s default
+#    fi
+#fi
