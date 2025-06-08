@@ -10,6 +10,9 @@ configuration {
 	window-format:              "{w} {c}";
 }
 
+
+
+
 /*****----- Global Properties -----*****/
 * {
     font:                        "JetBrains Mono Nerd Font 10";
