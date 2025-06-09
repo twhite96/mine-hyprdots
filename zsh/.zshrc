@@ -83,6 +83,7 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # # Shell integrations
 eval "$(fzf --zsh)"
+export _ZO_ECHO='0'
 eval "$(zoxide init --cmd cd zsh)"
 eval $(thefuck --alias)
 eval "$(atuin init zsh)"
@@ -111,13 +112,14 @@ ms(){
 alias kls='kubectl get all'
 
 alias jump='nvim $(fzf -m --preview="bat --color=always {}")'
-alias ls='eza -l -i --header  --tree --level=1  --all --sort=Name'
+alias ls='eza -l --icons --level=0 --tree --sort=Name'
 alias search='eval "~/.local/bin/search.sh"'
 alias cod='code .'
 
 # Tmux
 alias t='tmux new -s '
 alias tt='tmux a -t'
+alias fbat="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 alias seek='pacseek'
 alias y='yazi'
@@ -144,7 +146,7 @@ cpcf() {
 }
 
 mount_gdrive() {
-  rclone mount gdrive: ~/mnt/gdrive 
+    rclone mount gdrive: ~/mnt/gdrive
 }
 
 gh_open() {
