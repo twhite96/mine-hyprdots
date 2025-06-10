@@ -1,0 +1,77 @@
+console_title_template = '{{.Folder}}'
+version = 3
+final_space = true
+
+[palette]
+  blue = '#8CAAEE'
+  closer = 'p:os'
+  lavender = '#BABBF1'
+  os = '#ACB0BE'
+  pink = '#F4B8E4'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    template = '{{.Icon}} '
+    foreground = 'p:os'
+    type = 'os'
+    style = 'plain'
+
+  [[blocks.segments]]
+    template = '{{ .Shell}} '
+    foreground = 'p:blue'
+    type = 'session'
+    style = 'plain'
+
+  [[blocks.segments]]
+    template = '{{ .Folder}} '
+    foreground = 'p:pink'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      folder_icon = '..'
+      hide_root_location = true
+      home_icon = '~'
+      max_depth = 1
+      style = 'agnoster_short'
+
+  [[blocks.segments]]
+    template = '{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }} '
+    foreground = 'p:lavender'
+    type = 'git'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      branch_icon = ' '
+      cherry_pick_icon = ' '
+      commit_icon = ' '
+      fetch_status = false
+      fetch_upstream_icon = false
+      merge_icon = ' '
+      no_commits_icon = ' '
+      rebase_icon = ' '
+      revert_icon = ' '
+      tag_icon = ' '
+
+  [[blocks.segments]]
+    template = ''
+    foreground = 'p:closer'
+    type = 'text'
+    style = 'plain'
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    template = '{{ .FormattedMs }}'
+    foreground = '#F47AD4'
+    background = 'transparent'
+    type = 'executiontime'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      threshold = 5000
