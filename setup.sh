@@ -12,7 +12,7 @@ cat <<EOF
 
 EOF
 
-CONFIGS="cava ghostty dunst fastfetch pacseek hypr hypridle rofi starship zellij waybar yazi"
+CONFIGS="cava ghostty dunst fastfetch pacseek hypr hypridle rofi starship zellij waybar yazi zoxide"
 BACKUP_DIR="$HOME/.config_backup"
 LOCAL_BIN="$HOME/.local/bin"
 FONT_DIR="$HOME/.local/share/fonts"
@@ -104,6 +104,24 @@ else
   echo "✔️ yay is already installed."
 fi
 
+# Install dev languages and tools
+
+echo "==> Installing languages ..."
+
+while true; do
+  echo "==> Installing rust..."
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+  echo "==> Installing bun..."
+  curl -fsSL https://bun.sh/install | bash
+
+  echo "==> Installing node via nvm..."
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+  echo "Waiting to install other packages and xdg-desktop-portal-hyprland..."
+  sleep 10
+done
+
 # Install useful packages from pacman and AUR
 echo "==> Installing core packages..."
 yay -S --noconfirm \
@@ -119,6 +137,8 @@ yay -S --noconfirm \
   atuin \
   zellij \
   eza \
+  zoxide \
+  lazydocker \
   acpi \
   playerctl \
   zsh-autosuggestions \
@@ -138,6 +158,7 @@ sudo pacman -S --noconfirm \
   slurp \
   grim \
   hyprlock \
+  lazygit \
   pamixer
 
 # Set zsh as default shell if not already
