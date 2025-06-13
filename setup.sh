@@ -12,24 +12,22 @@ cat <<EOF
 
 EOF
 
-CONFIGS="cava ghostty dunst fastfetch pacseek hypr hypridle rofi starship zellij waybar yazi zoxide"
-BACKUP_DIR="$HOME/.config_backup"
 LOCAL_BIN="$HOME/.local/bin"
 FONT_DIR="$HOME/.local/share/fonts"
-DOTS_DIR="$HOME/hyprdots"
+DOTS_DIR="$HOME/mine-hyprdots"
 
-echo "==> Backing up existing config files..."
-mkdir -p "$BACKUP_DIR"
-for dir in $CONFIGS; do
-  if [ -d "$HOME/.config/$dir" ]; then
-    echo "=> Backing up $dir to $BACKUP_DIR"
-    cp -r "$HOME/.config/$dir" "$BACKUP_DIR/$dir"
-    rm -rf "$HOME/.config/$dir"
-  fi
-done
-
-echo "==> Copying new config files..."
-cp -r $CONFIGS "$HOME/.config/"
+# echo "==> Backing up existing config files..."
+# mkdir -p "$BACKUP_DIR"
+# for dir in $CONFIGS; do
+#   if [ -d "$HOME/.config/$dir" ]; then
+#     echo "=> Backing up $dir to $BACKUP_DIR"
+#     cp -r "$HOME/.config/$dir" "$BACKUP_DIR/$dir"
+#     rm -rf "$HOME/.config/$dir"
+#   fi
+# done
+#
+# echo "==> Copying new config files..."
+# cp -r $CONFIGS "$HOME/.config/"
 
 echo "==> Making Waybar and Rofi scripts executable..."
 chmod +x ~/.config/waybar/scripts/*
