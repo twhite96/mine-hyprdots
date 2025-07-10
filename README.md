@@ -31,7 +31,7 @@
 
 <!-- ##### Home: -->
 
-![home](Assets/main.png)
+![home](Assets/fetch.png)
 
 <!-- ##### K9s and Cava: -->
 
@@ -39,7 +39,7 @@
 
 <!-- ##### Yazi and Btop: -->
 
-![btop](Assets/btop.png)
+![btop](Assets/center-btop.png)
 
 <!-- ##### Powermenu: -->
 
@@ -55,23 +55,22 @@
 
 ## Wallpaper
 
-[Wallpaper](https://drive.google.com/drive/folders/1Eog40yvrTshjDLVIETVncBKcDsvPLMIX?usp=sharing)
+[Wallpaper](https://nextcloud.tiffs.app/s/ceEcnAys7SGq6fG)
 
 ---
-
-## 🚀 Quick Installation Guide
 
 ### 📦 Programs Included
 
 - **Window Manager**: Hyprland (Tiling)
 - **Status Bar**: Waybar
 - **Notification Manager**: Dunst
-- **Browser**: Zen
+- **Browser**: Vivaldi
 - **Color Picker**: hyprpicker
-- **Wallpaper Utility**: hyprpaper
+- **Wallpaper Utility**: sww/waypaper
 - **Screenshot Utility**: grim + slurp
 - **App Launcher**: Rofi
-- **Terminal Emulator**: kitty
+- **Terminal Emulator**: ghostty
+- **Terminal Multiplexer**: zellij
 - **Shell**: Zsh
 - **Media Controls**: playerctl
 - **Power Management**: acpi
@@ -83,44 +82,8 @@
 
 ---
 
-## 🛠️ Installation Steps
-
-1. **Clone the repository** to your home directory like `~` or `/home/username` :
-
-   ```sh
-   git clone https://github.com/ad1822/hyprdots ~/hyprdots
-   ```
-
-2. **Navigate to the cloned directory**:
-
-   ```sh
-   cd ~/hyprdots
-   ```
-
-3. **Run the setup script**:
-
-   ```sh
-   sudo bash ./setup.sh
-   ```
-
-4. **GTK Theme Setup**:
+**GTK Theme Setup**:
 
 - [Catppuccin Gtk theme](https://github.com/catppuccin/gtk/releases)
 
 - I use [`ngw-look`](https://github.com/nwg-piotr/nwg-look) to configure GTK themes and styles.
-
----
-
-## ⚠️ Important Notice (Read Before Running Setup)
-
-> ### **Warning:**
->
-> This setup script will **move your existing config files** (e.g., for Waybar, Kitty, Hyprland, etc.) to a backup folder at `~/.config_backup`. Then, it will copy the new configs from this repo into your `~/.config` directory.
->
-> ### What this means:
->
-> - Your current setup will be **replaced**.
-> - If you have customizations you care about, **back them up manually** or review the script before running.
-> - Fonts and themes will be installed system-wide in your `~/.local/share/fonts` directory.
-
----
